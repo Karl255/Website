@@ -62,15 +62,3 @@ nav li a:hover, .current {
 main {
 	margin-bottom: 48px;
 }
-
-footer {
-	background-color: #202020;
-	position: fixed;
-	bottom: 0px;
-	width: 100%;
-}
-
-footer > p {
-	line-height: 0px;
-	color: white;
-}
