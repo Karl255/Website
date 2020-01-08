@@ -81,6 +81,7 @@ nav a:hover, .current {
 	display: block;
 }
 
-main {
-	margin-bottom: 48px;
+a {
+	text-decoration-color: #303030;
+	color: #303030;
 }

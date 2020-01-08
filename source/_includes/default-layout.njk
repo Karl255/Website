@@ -1,0 +1,54 @@
+---json
+{
+	"menus": [
+		{
+			"title": "Unordered Stuff",
+			"tag": "interesting"
+		},
+		{
+			"title": "Non-Existent Stuff",
+			"tag": "nope"
+		}
+	]
+}
+---
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<link rel="stylesheet" href="/styles/style.css">
+	<title>{{ title }}</title>
+</head>
+
+<body>
+	<header>
+		<img src="/images/logo.png" alt="logo" id="logo">
+		<h1>Header</h1>
+	</header>
+
+	<nav>
+		<a class="current" href="/">HOME</a>
+		{%- for menu in menus -%}
+			<div class="dropdown-menu">
+				<button>{{ menu.title }}</button>
+				<div class="dropdown-content">
+					{%- for page in collections[menu.tag] -%}
+						<a href="{{ page.url }}"> {{ page.data.title }}</a>
+					{%- else -%}
+						<a>Invalid menu!</a>
+					{%- endfor -%}
+				</div>
+			</div>
+		{%- endfor -%}
+		<a href="about">About</a>
+	</nav>
+
+	<main>
+		{{ content | safe }}
+	</main>
+</body>
+
+</html>
