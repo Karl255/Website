@@ -1,0 +1,8 @@
+---
+title: Interesting stuff
+layout: default-layout.njk
+eleventyNavigation:
+  key: Interesting
+  title: Interesting Stuff
+---
+{{ collections.all | eleventyNavigation("Interesting") | eleventyNavigationToHtml | safe }}
