@@ -9,6 +9,9 @@
 	{% for stylesheet in stylesheets %}
 	<link rel="stylesheet" href="/styles/{{stylesheet}}">
 	{% endfor %}
+	{% for script in scripts %}
+	<script src="{{ script }}"></script>
+	{% endfor %}
 	<title>{{ title }}</title>
 </head>
 
