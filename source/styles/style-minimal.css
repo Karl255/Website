@@ -26,6 +26,7 @@ header {
 	flex-direction: row;
 	align-items: center;
 	padding: 0px;
+	z-index: 1;
 }
 
 header > h1 {
@@ -117,7 +118,6 @@ main {
 	flex-grow: 1;
 	margin: 0px 140px 30px 140px;
 	box-shadow: black 0px 0px 8px;
-	z-index: -1;
 }
 
 a {
