@@ -1,0 +1,12 @@
+---
+layout: default-layout.njk
+---
+{{ content | safe}}
+<p style="font-weight: bold;">Content</p>
+<style>
+ul {
+	padding-left: 15px;
+	list-style-type: disc;
+}
+</style>
+{{ collections.all | eleventyNavigation(eleventyNavigation.key) | eleventyNavigationToHtml | safe }}
