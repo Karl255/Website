@@ -1,0 +1,154 @@
+
+* {
+	box-sizing: border-box;
+}
+
+html {
+	height: 100%;
+}
+
+body {
+	background-image: linear-gradient(#606060, #353535);
+	font-family: sans-serif, Helvetica, Verdana;
+	display: flex;
+	flex-direction: column;
+	height: 100%;
+	margin: 0px;
+}
+
+main {
+	flex-grow: 1;
+	padding: 8px;
+}
+
+header {
+	background-color: #202020;
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	padding: 0px;
+}
+
+header > h1 {
+	color: white;
+	line-height: 0px;
+	font-size: 22px;
+}
+
+header > * {
+	margin: 0px 8px;
+}
+
+#logo {
+	width: 32px;
+	height: 100%;
+}
+
+/* navbar styles */
+
+nav {
+	min-height: 100%;
+}
+
+nav a {
+	color: white;
+	display: block;
+	padding: 8px 12px;
+	font-size: 16px;
+	text-decoration: none;
+	width: 100%;
+}
+
+nav li:hover {
+	background-color: limegreen;
+}
+
+nav li:hover > a {
+	color: black;
+	text-decoration: none;
+}
+
+nav {
+	background-color: #202020;
+}
+
+nav ul {
+	background-color: #202020;
+	list-style: none;
+	font-size: 0px;
+	padding: 0px;
+}
+
+ul.navRoot > ul {
+	display: inline-block;
+}
+
+nav > ul > li {
+	display: inline-block;
+}
+
+li.subTree {
+	position: relative;
+}
+
+nav li li {
+	display: block;
+}
+
+li.subtree li.subTree > * {
+	display: inline-block;
+}
+
+li.subTree li.subTree > a {
+	display: inline-block;
+}
+
+li.subTree > ul {
+	display: none;
+	position: absolute;
+}
+
+li.subTree:hover > ul {
+	display: inline-block;
+}
+
+/* end of navbar styles */
+
+a {
+	color: forestgreen;
+	text-decoration: none;
+}
+
+a:hover {
+	color: forestgreen;
+	text-decoration: forestgreen underline;
+}
+
+body > main {
+	display: flex;
+	flex-direction: row;
+	padding: 0px;
+}
+
+aside.blog-nav {
+	color: white;
+	background-color: #303030;
+	padding: 8px;
+	box-shadow: black 0px 0px 8px;
+	width: 260px;
+	z-index: -1;
+}
+
+aside.blog-nav ul {
+	padding-left: 15px;
+	list-style: disc;
+}
+
+main > main {
+	background-color: white;
+	box-shadow: black 0px 0px 8px;
+	flex-grow: 1;
+	padding: 8px;
+	margin: 0px 80px 30px 80px;
+	z-index: -1;
+}
