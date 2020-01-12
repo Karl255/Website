@@ -1,11 +1,21 @@
 ---
-title: 8. Program Za skraćivanje IPv6 adrese
+title: 8. Alat Za skraćivanje IPv6 adrese
 date: 2020-01-12
 layout: blog-layout.njk
 blogRoot: RM Zadaci
+stylesheets:
+   - rm-8-style.css
+scripts:
+  - rm-8-script.js
 eleventyNavigation:
-  key: 8. Program za skraćivanje IPv6 adrese
+  key: 8. Alat za skraćivanje IPv6 adrese
   parent: RM Zadaci
   order: 8
 ---
-<p>test sadržaj</p>
+<article>
+  <label for="longAddress">Puna IPv6 adresa:</label>
+  <input id="longAddress" type="text">
+  <label for="shortAddress">Skraćena IPv6 adresa:</label>
+  <input id="shortAddress" type="text">
+  <button onclick="shortenAddress()">Skrati adresu</button>
+</article>
