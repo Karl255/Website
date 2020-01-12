@@ -49,6 +49,7 @@ nav li:hover {
 
 nav li:hover > a {
 	color: black;
+	text-decoration: none;
 }
 
 nav {
@@ -75,7 +76,7 @@ li.subTree {
 	position: relative;
 }
 
-li li {
+nav li li {
 	display: block;
 }
 
@@ -97,3 +98,13 @@ li.subTree:hover > ul {
 }
 
 /* end of navbar styles */
+
+a {
+	color: forestgreen;
+	text-decoration: none;
+}
+
+a:hover {
+	color: forestgreen;
+	text-decoration: forestgreen underline;
+}
