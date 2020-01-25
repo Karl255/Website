@@ -9,7 +9,7 @@ html {
 
 body {
 	background-image: linear-gradient(#606060, #353535);
-	font-family: sans-serif, Helvetica, Verdana;
+	font-family: Verdana, sans-serif;
 	display: flex;
 	flex-direction: column;
 	height: 100%;

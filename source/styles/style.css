@@ -12,7 +12,7 @@ body {
 	margin: 0px;
 	display: flex;
 	flex-direction: column;
-	font-family: sans-serif, Helvetica, Verdana;
+	font-family: Verdana, sans-serif;
 }
 
 header, main {
