@@ -31,52 +31,21 @@ nav.top-nav, nav.top-nav > ul {
 }
 
 main {
-	display: flex;
-	flex-direction: row;
 	flex-grow: 1;
-}
-
-aside.blog-nav {
-	color: white;
-	background-color: var(--dark-2);
-	box-shadow: #0005 0px 0px 6px 4px;
-	padding: 0 8px;
-	width: 15%;
-	min-width: 150px;
-}
-
-aside.blog-nav ul {
-	padding-left: 15px;
-}
-
-aside.blog-nav a {
-	color: var(--accent-light);
-	text-decoration: none;
-}
-
-aside.blog-nav a:hover {
-	text-decoration: underline;
+	display: flex;
+	justify-content: center;
 }
 
 main > article {
 	background-color: white;
 	box-shadow: #0005 0px 0px 6px 4px;
-	flex-grow: 1;
+	height: 100%;
+	width: 80%;
 	padding: 8px;
-	margin: 0px 5%;
 }
 
 @media screen and (max-width: 480px) {
-	main {
-		flex-direction: column;
-	}
-
-	main > aside.blog-nav {
-		width: 100%;
-	}
-
 	main > article {
-		margin: 0;
 		width: 100%;
 	}
 }

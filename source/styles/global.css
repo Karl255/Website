@@ -1,0 +1,29 @@
+* {
+	box-sizing: border-box;
+}
+
+:root {
+	--accent-dark: #159957;
+	--accent-light: #0FCA6C;
+	--dark-1: #202020;
+	--dark-2: #303030;
+}
+
+html {
+	height: 100%;
+}
+
+body {
+	background-image: linear-gradient(to bottom right, #0099FF, #00FF80);
+	height: 100%;
+	margin: 0px;
+	font-family: Helvetica, sans-serif;
+}
+
+a {
+	color: var(--accent-dark);
+}
+
+a:hover {
+	color: var(--accent-light);
+}

@@ -8,7 +8,7 @@ input[type="text"] {
 
 button {
 	color: white;
-	background-color: #4CAF50;
+	background-color: var(--accent-light);
 	cursor: pointer;
 	font-size: 14px;
 	margin: 8px 0;
@@ -18,12 +18,12 @@ button {
 }
 
 button:hover {
-	background-color: #45a049;
+	background-color: var(--accent-dark);
 }
 
-article {
+article.form {
 	margin: 12px;
 	display: flex;
 	flex-direction: column;
-	width: 360px;
+	max-width: 360px;
 }

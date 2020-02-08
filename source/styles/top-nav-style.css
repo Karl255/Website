@@ -1,0 +1,66 @@
+nav.top-nav {
+	background-color: var(--darl-2);
+	z-index: 1;
+}
+
+nav.top-nav a {
+	color: white;
+	display: block;
+	padding: 8px 12px;
+	font-size: 16px;
+	text-decoration: none;
+	width: 100%;
+}
+
+nav.top-nav li:hover > a {
+	background-color: var(--accent-light);
+	color: black;
+	text-decoration: none;
+}
+
+nav.top-nav ul {
+	background-color: var(--dark-2);
+	list-style: none;
+	font-size: 0px;
+	padding: 0px;
+}
+
+ul.nav-root > ul {
+	display: inline-block;
+}
+
+ul.nav-root > li {
+	display: inline-block;
+}
+
+li.subtree {
+	position: relative;
+}
+
+li.subtree > a {
+	pointer-events: none;
+	cursor: default;
+}
+
+li.subtree li {
+	display: block;
+}
+
+li.subtree li > * {
+	display: inline-block;
+}
+
+/* uncomment if specifity issues arise
+li.subtree li > a {
+	display: inline-block;
+}
+*/
+
+li.subtree > ul {
+	display: none;
+	position: absolute;
+}
+
+li.subtree:hover > ul {
+	display: inline-block;
+}
