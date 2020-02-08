@@ -1,12 +1,4 @@
 ---
 layout: default-layout.njk
+permalink: false
 ---
-{{ content | safe}}
-<p style="font-weight: bold;">Sadržaj</p>
-<style>
-ul {
-	padding-left: 15px;
-	list-style-type: disc;
-}
-</style>
-{{ collections.all | eleventyNavigation(eleventyNavigation.key) | eleventyNavigationToHtml | safe }}
