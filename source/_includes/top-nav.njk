@@ -1,0 +1,6 @@
+<nav class="top-nav">
+	{{ collections.all | eleventyNavigation("root") | eleventyNavigationToHtml({
+		listClass: "nav-root",
+		listItemHasChildrenClass: "subtree"
+	}) | safe }}
+</nav>

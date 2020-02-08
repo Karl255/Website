@@ -25,12 +25,7 @@
 		<h1>{{ title }}</h1>
 	</header>
 
-	<nav class="top-nav">
-		{{ collections.all | eleventyNavigation | eleventyNavigationToHtml({
-			listClass: "nav-root",
-			listItemHasChildrenClass: "subtree"
-		}) | safe }}
-	</nav>
+	{% include "top-nav.njk" %}
 
 	<main>
 		<article>
