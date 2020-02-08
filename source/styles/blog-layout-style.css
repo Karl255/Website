@@ -17,13 +17,17 @@ header > * {
 
 header > h1 {
 	color: white;
-	line-height: 0px;
 	font-size: 22px;
 }
 
 #logo {
 	width: 32px;
 	height: 32px;
+}
+
+header > nav.top-nav {
+	flex-grow: 1;
+	align-self: stretch;
 }
 
 nav.top-nav, nav.top-nav > ul {
