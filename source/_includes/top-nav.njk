@@ -2,5 +2,16 @@
 	{{ collections.all | eleventyNavigation("root") | eleventyNavigationToHtml({
 		listClass: "nav-root",
 		listItemHasChildrenClass: "subtree"
+	}) | safe }}{{
+		collections.all | eleventyNavigation("debug") | eleventyNavigationToHtml({
+		listClass: "nav-root debug-nav",
+		listItemHasChildrenClass: "subtree"
 	}) | safe }}
+	<button class="debug-button" onclick="toggleDebugNav()"></button>
+	<script>
+		function toggleDebugNav() {
+			let e = document.getElementsByClassName("debug-nav")[0];
+			e.style.display = e.style.display == "inline-block" ? "none" : "inline-block";
+		}
+	</script>
 </nav>

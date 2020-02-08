@@ -25,6 +25,10 @@ nav.top-nav ul {
 	padding: 0px;
 }
 
+ul.nav-root {
+	display: inline-block;
+}
+
 ul.nav-root > ul {
 	display: inline-block;
 }
@@ -63,4 +67,17 @@ li.subtree > ul {
 
 li.subtree:hover > ul {
 	display: inline-block;
+}
+
+ul.debug-nav {
+	display: none;
+}
+
+button.debug-button {
+	background: none;
+	border: none;
+	float: right;
+	padding: 0;
+	height: 100%;
+	width: 50px;
 }

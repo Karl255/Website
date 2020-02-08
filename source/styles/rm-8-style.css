@@ -6,7 +6,7 @@ input[type="text"] {
 	border-radius: 5px;
 }
 
-button {
+article button {
 	color: white;
 	background-color: var(--accent-light);
 	cursor: pointer;
@@ -17,7 +17,7 @@ button {
 	border-radius: 5px;
 }
 
-button:hover {
+article button:hover {
 	background-color: var(--accent-dark);
 }
 
