@@ -14,7 +14,9 @@ html {
 }
 
 body {
-	background-image: linear-gradient(to bottom right, #0099FF, #00FF80);
+	/*background-image: linear-gradient(to bottom right, #0099FF, #00FF80);*/
+	background: url("/images/background.jpg") no-repeat bottom;
+	background-size: cover;
 	height: 100%;
 	margin: 0px;
 	font-family: Helvetica, sans-serif;
