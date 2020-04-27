@@ -1,0 +1,66 @@
+---
+layout: sjiwp
+eleventyNavigation:
+  key: Obrazac
+  parent: LV04
+---
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>Document</title>
+</head>
+<body>
+	<h1> Obrazac o učeniku </h1>
+	<hr width="70%" align="left">
+	
+	<form method="GET">
+		Ime: <input type="text" name="ime" size="30" maxlength="30"> <br>
+		Prezime: <input type="text" name="prezime" size="30" maxlength="30"> <br>
+		Lozinka: <input type="password" name="lozinka"> <br>
+		<br>
+		
+		Spol:
+		<input type="radio" name="spol" value="muško" checked> Muško
+		<input type="radio" name="spol" value="žensko"> Žensko
+		<br>
+		
+		<input type="text" name="grad" value="Zagreb">
+		
+		<hr width="50%" align="left">
+		
+		<input type="radio" name="obrazovanje" value="osnovna škola"> Osnovna škola <br>
+		<input type="radio" name="obrazovanje" value="srednja škola" checked> Srednja škola <br>
+		<input type="radio" name="obrazovanje" value="fakultet"> Fakultet <br>
+		<br>
+		
+		<input type="checkbox" name="predmet" value="izrada web stranica" checked> Izrada web stranica <br>
+		<input type="checkbox" name="predmet" value="web programiranje"> Web programiranje <br>
+		<input type="checkbox" name="predmet" value="baze podataka"> Baze podataka
+		
+		<hr width="50%" align="left">
+
+		Omiljeni šport:
+		<select name="sport">
+			<option value="nogomet"> Nogomet </option>
+			<option value="rukomet" selected> Rukomet </option>
+			<option value="odbojka"> Odbojka </option>
+		</select>
+		
+		Omiljena glazba: 
+		<select name="glazba">
+			<option value="pop"> Pop </option>
+			<option value="rock"> Rock </option>
+			<option value="funky" selected> Funky </option>
+			<option value="tehno"> Tehno </option>
+		</select>
+		
+		<hr width="50%" align="left">
+		
+		<input type="submit" value="Pošalji">
+		<input type="reset" value="Reset">
+	</form>
+</body>
+</html>
