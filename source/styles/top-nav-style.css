@@ -10,6 +10,7 @@ nav.top-nav a {
 	font-size: 16px;
 	text-decoration: none;
 	width: 100%;
+	white-space: nowrap;
 }
 
 nav.top-nav li:hover > a {
