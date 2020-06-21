@@ -6,6 +6,32 @@ eleventyNavigation:
   parent: root
   order: 1000
 ---
+<style>
+	button {
+		color: whitesmoke;
+		background-color: hsl(225, 75%, 55%);
+		border: none;
+		border-radius: 6px;
+		padding: 8px 16px;
+	}
+
+	button:hover {
+		background-color: hsl(225, 77%, 40%);
+		cursor: pointer;
+	}
+
+	#contact-info > p {
+		font-size: 14px;
+	}
+</style>
+<script>
+	function showInfo() {
+		let info = "RGlzY29yZDoga2FybCMyMjMwPGJyPkUtbWFpbDoga2FybG8uYmlzdHJpY2tpMjU2QGdtYWlsLmNvbQ==";
+		document.getElementById("contact-button").style.display = "none";
+		document.getElementById("contact-info").innerHTML = atob(info);
+	}
+</script>
+
 <p>Autor: Karlo Bistrički, 3.H</p>
 <p>Web stranica je hostana na
 	<a href="https://netlify.com">Netlify-u</a>
@@ -13,3 +39,10 @@ eleventyNavigation:
 	<a href="https://github.com/Karl255/karlo-tsrb/">ovog</a>
 	Github repozitorija.
 </p>
+<br>
+<p>
+	Kontaktne informacije:
+</p>
+<button id="contact-button" onclick="showInfo();">Prikaži</button>
+<pre id="contact-info">
+</pre>
