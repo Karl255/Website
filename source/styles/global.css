@@ -29,3 +29,16 @@ a {
 a:hover {
 	color: var(--accent-light);
 }
+
+code {
+	font-size: 14px;
+	font-family: "JetBrains Mono", Consolas, monospace;
+	background-color: #00000020;
+	padding: 2px 4px;
+	border-radius: 5px;
+	border: 1px solid #00000030
+}
+
+pre > code {
+	padding: 4px 6px;
+}
