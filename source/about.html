@@ -7,19 +7,6 @@ eleventyNavigation:
   order: 1000
 ---
 <style>
-	button {
-		color: whitesmoke;
-		background-color: hsl(225, 75%, 55%);
-		border: none;
-		border-radius: 6px;
-		padding: 8px 16px;
-	}
-
-	button:hover {
-		background-color: hsl(225, 77%, 40%);
-		cursor: pointer;
-	}
-
 	#contact-info > p {
 		font-size: 14px;
 	}
@@ -39,10 +26,9 @@ eleventyNavigation:
 	<a href="https://github.com/Karl255/karlo-tsrb/">ovog</a>
 	Github repozitorija.
 </p>
-<br>
 <p>
 	Kontaktne informacije:
 </p>
-<button id="contact-button" onclick="showInfo();">Prikaži</button>
+<button id="contact-button" class="button" onclick="showInfo();">Prikaži</button>
 <pre id="contact-info">
 </pre>

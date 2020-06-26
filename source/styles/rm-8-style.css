@@ -1,29 +1,10 @@
-input[type="text"] {
-	font-size: 14px;
-	margin: 8px 0;
-	padding: 10px 16px;
-	border: 1px solid #d6d6d6;
-	border-radius: 5px;
-}
-
-article button {
-	color: white;
-	background-color: var(--accent-light);
-	cursor: pointer;
-	font-size: 14px;
-	margin: 8px 0;
-	padding: 12.5px 18px;
-	border: none;
-	border-radius: 5px;
-}
-
-article button:hover {
-	background-color: var(--accent-dark);
-}
-
 article.form {
 	margin: 12px;
 	display: flex;
 	flex-direction: column;
 	max-width: 360px;
+}
+
+label {
+	margin-top: .5em;
 }

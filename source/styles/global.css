@@ -2,6 +2,7 @@
 	box-sizing: border-box;
 }
 
+/* variables */
 :root {
 	--accent-dark: #159957;
 	--accent-light: #0FCA6C;
@@ -20,8 +21,10 @@ body {
 	height: 100%;
 	margin: 0px;
 	font-family: Helvetica, sans-serif;
+	font-size: 16px;
 }
 
+/* links */
 a {
 	color: var(--accent-dark);
 }
@@ -30,6 +33,7 @@ a:hover {
 	color: var(--accent-light);
 }
 
+/* inline code and code blocks */
 code {
 	font-size: 14px;
 	font-family: "JetBrains Mono", Consolas, monospace;
@@ -46,4 +50,40 @@ pre.code {
 	padding: 2px 4px;
 	border-radius: 5px;
 	border: 1px solid #00000030
+}
+
+/* buttons */
+.button {
+	font-size: .875em;
+	color: whitesmoke;
+	background: var(--accent-light);
+	border: none;
+	border-radius: 5px;
+	margin: 6px;
+	padding: 8px 14px;
+	cursor: pointer;
+	transition: background .1s ease-out;
+}
+
+.button:hover,
+.button:focus {
+	background-color: var(--accent-dark);
+}
+
+/* text/input boxes */
+input[type="text"],
+input[tpye="number"] {
+	font-size: .875em;
+	margin: 6px;
+	padding: 8px 12px;
+	border: 1px solid #d6d6d6;
+	border-radius: 5px;
+	transition: border .1s ease-out;
+}
+
+input[type="text"]:focus,
+input[tpye="number"]:focus,
+input[type="text"]:hover,
+input[tpye="number"]:hover {
+	border-color: #a0a0a0;
 }
