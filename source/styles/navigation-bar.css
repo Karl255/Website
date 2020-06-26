@@ -66,6 +66,18 @@
 	content: " ›";
 }
 
+.branch .branch:hover::after {
+	content: " ";
+	/* triangle shape */
+	border-top: 6px solid transparent;
+	border-bottom: 6px solid transparent;
+	border-left: 6px solid var(--accent-light);
+	
+	top: 11px;
+	color: var(--dark-2);
+	position: absolute;
+}
+
 /* invisible button to show debug/test pages */
 button.debug-button {
 	background: none;
