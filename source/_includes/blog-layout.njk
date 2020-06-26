@@ -6,7 +6,7 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<meta http-equiv="X-UA-Compatible" content="ie=edge">
 	<link rel="stylesheet" href="/styles/global.css">
-	<link rel="stylesheet" href="/styles/top-nav-style.css">
+	<link rel="stylesheet" href="/styles/navigation-bar.css">
 	<link rel="stylesheet" href="/styles/blog-layout-style.css">
 	<!-- site specific styles-->
 	{% for stylesheet in stylesheets %}
@@ -23,7 +23,7 @@
 	<header>
 		<img src="/images/logo.png" alt="logo" id="logo">
 		<h1>{{ title }}</h1>
-		{% include "top-nav.njk" %}
+		{% include "navigation-bar.njk" %}
 	</header>
 
 	<main>

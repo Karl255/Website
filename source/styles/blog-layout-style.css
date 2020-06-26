@@ -25,12 +25,12 @@ header > h1 {
 	height: 32px;
 }
 
-header > nav.top-nav {
+header > nav.navigation-bar {
 	flex-grow: 1;
 	align-self: stretch;
 }
 
-nav.top-nav, nav.top-nav > ul {
+nav.navigation-bar, nav.navigation-bar > ul {
 	background-color: var(--dark-1);
 }
 

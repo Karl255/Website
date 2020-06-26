@@ -1,9 +1,9 @@
-nav.top-nav {
+nav.navigation-bar {
 	background-color: var(--dark-2);
 	z-index: 1;
 }
 
-nav.top-nav a {
+nav.navigation-bar a {
 	color: white;
 	display: block;
 	padding: 8px 12px;
@@ -13,28 +13,28 @@ nav.top-nav a {
 	white-space: nowrap;
 }
 
-nav.top-nav li:hover > a {
+nav.navigation-bar li:hover > a {
 	background-color: var(--accent-light);
 	color: black;
 	text-decoration: none;
 }
 
-nav.top-nav ul {
+nav.navigation-bar ul {
 	background-color: var(--dark-2);
 	list-style: none;
 	font-size: 0px;
 	padding: 0px;
 }
 
-ul.nav-root {
+ul.navigation-root {
 	display: inline-block;
 }
 
-ul.nav-root > ul {
+ul.navigation-root > ul {
 	display: inline-block;
 }
 
-ul.nav-root > li {
+ul.navigation-root > li {
 	display: inline-block;
 }
 
@@ -70,7 +70,7 @@ li.subtree:hover > ul {
 	display: inline-block;
 }
 
-ul.debug-nav {
+ul.debug-navigation {
 	display: none;
 }
 

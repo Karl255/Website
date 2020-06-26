@@ -1,12 +1,12 @@
-<nav class="top-nav">
+<nav class="navigation-bar">
 	{{ collections.all | eleventyNavigation("root") | eleventyNavigationToHtml({
-		listClass: "nav-root",
+		listClass: "navigation-root",
 		listItemHasChildrenClass: "subtree"
 	}) | safe }}{{
 		collections.all | eleventyNavigation("debug") | eleventyNavigationToHtml({
-		listClass: "nav-root debug-nav",
+		listClass: "navigation-root debug-navigation",
 		listItemHasChildrenClass: "subtree"
 	}) | safe }}
 	<button class="debug-button" onclick="toggleDebugNav()"></button>
-	<script src="/scripts/top-nav-script.js"></script>
+	<script src="/scripts/navigation-bar.js"></script>
 </nav>
