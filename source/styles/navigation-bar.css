@@ -61,6 +61,11 @@
 	display: inline-block;
 }
 
+/* indicator for menus which contain another dropdown */
+.branch .branch > a::after {
+	content: " ›";
+}
+
 /* invisible button to show debug/test pages */
 button.debug-button {
 	background: none;
