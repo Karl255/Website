@@ -44,21 +44,37 @@
 	pointer-events: none;
 }
 
-/* hide dropdown if not hovered on */
+/* all dropdowns */
+/* hide by default */
 .branch > ul {
 	background-color: var(--dark-2);
-	display: none;
+	visibility: hidden;
 	position: absolute;
+	opacity: 0;
+	transition: all 200ms ease-out;
+}
+/* show on hover */
+.branch:hover > ul {
+	opacity: 1;
+	visibility: visible;
 }
 
-/* level 1 dropdowns drop down */
-.navigation-root > .branch:hover > ul {
+/* level 1 dropdowns only */
+.navigation-root > .branch > ul {
 	display: block;
+	transform: translateY(50px);
+}
+.navigation-root > .branch:hover > ul {
+	transform: none;
 }
 
-/* level >1 dropdowns drop right */
-.branch .branch:hover > ul {
+/* level >1 dropdowns (rights) only */
+.branch .branch > ul {
 	display: inline-block;
+	transform: translateX(50px);
+}
+.branch .branch:hover > ul {
+	transform: none;
 }
 
 /* indicator for menus which contain another dropdown */
