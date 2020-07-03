@@ -1,7 +1,7 @@
 ---
 layout: nav-dummy.njk
 eleventyNavigation:
-  key: RM Zadaci
+  key: RM Tasks
   parent: root
   order: 1
 ---
