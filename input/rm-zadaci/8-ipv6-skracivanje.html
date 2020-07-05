@@ -1,0 +1,16 @@
+Layout: /Layouts/_DefaultLayout.cshtml
+Title: 8. Tool for shortening IPv6 addresses
+NavOrder: 8
+Date: 2020-01-12
+AdditionalStyles:
+  - rm-8-style.css
+AdditionalScripts:
+  - rm-8-script.js
+---
+<article class="form">
+  <label for="longAddress">Full IPv6 address:</label>
+  <input id="longAddress" type="text">
+  <label for="shortAddress">Shortened IPv6 address:</label>
+  <input id="shortAddress" type="text">
+  <button class="button" onclick="shortenAddress()">Shorten address</button>
+</article>

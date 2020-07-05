@@ -1,0 +1,25 @@
+Layout: /Layouts/_DefaultLayout.cshtml
+Title: About
+NavOrder: 1000
+---
+<style>
+	#contact-info > p {
+		font-size: 14px;
+	}
+</style>
+<script>
+	function showInfo() {
+		let info = "RGlzY29yZDoga2FybCMyMjMwPGJyPkUtbWFpbDoga2FybG8uYmlzdHJpY2tpMjU2QGdtYWlsLmNvbQ==";
+		document.getElementById("contact-button").style.display = "none";
+		document.getElementById("contact-info").innerHTML = atob(info);
+	}
+</script>
+
+<p>Author: Karlo Bistrički, 3.H</p>
+<p>This website is hosted on <a href="https://netlify.com">Netlify</a> from <a href="https://github.com/Karl255/karlo-tsrb/">this</a>Github repository.</p>
+<p>
+	Contact info:
+</p>
+<button id="contact-button" class="button" onclick="showInfo();">Show</button>
+<pre id="contact-info">
+</pre>

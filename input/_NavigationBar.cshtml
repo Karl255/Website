@@ -1,0 +1,47 @@
+<nav class="navigation-bar">
+	<ul class="navigation-root">
+		@{
+			IOrderedEnumerable<IDocument> OrderPages(IEnumerable<IDocument> documents) =>
+				documents
+				.OrderBy(d => d.GetInt("NavOrder"))
+				.ThenBy(d => DateTime.Parse(d.GetString("Date") ?? DateTime.MinValue.ToString()))
+				.ThenBy(d => d.GetString("Title", ""));
+
+			//recursive html generator for navigation
+			void GenerateNavForPage(IDocument document)
+			{
+				if (document.HasChildren())
+				{
+					//if it has children, it'll become unclickable (trough css)
+					//this is on purpose since I never need the page at the branch
+					<li class="branch">
+						<a href=".">@document.GetTitle()</a>
+						<ul>
+							@{
+								//render all its children recursively
+								foreach (var child in OrderPages(document.GetChildren()))
+								{
+									GenerateNavForPage(child);
+								}
+							}
+						</ul>
+					</li>
+				}
+				else
+				{
+					//otherwise simply create a link to it
+					<li><a href="@document.GetLink()">@document.GetTitle()</a></li>
+				}
+			}
+
+			//I couldn't find a way of finding the true root document (probably not even possible) so this has to do
+			//collection of pages in root
+			DocumentList<IDocument> rootPages = Outputs["Content"];
+
+			foreach (var page in OrderPages(rootPages))
+			{
+				GenerateNavForPage(page);
+			}
+		}
+	</ul>
+</nav>
