@@ -1,5 +1,6 @@
 ﻿using System.Threading.Tasks;
 using Statiq.App;
+using Statiq.Common;
 using Statiq.Web;
 
 namespace Website
@@ -10,7 +11,8 @@ namespace Website
 			await Bootstrapper
 			.Factory
 			.CreateWeb(args)
-			//.DeployToNetlify(Config.FromSetting("NETLIFY_WEBSITE_ID"), Config.FromSetting("NETLIFY_TOKEN"))
+			//these values are taken from the system's environment variables
+			.DeployToNetlify(Config.FromSetting("NETLIFY_WEBSITE_ID"), Config.FromSetting("NETLIFY_TOKEN"))
 			.RunAsync();
 	}
 }
