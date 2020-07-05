@@ -10,7 +10,6 @@
 			//recursive html generator for navigation
 			void GenerateNavForPage(IDocument document)
 			{
-				Console.WriteLine(document.Destination);
 				if (document.HasChildren())
 				{
 					//if it has children, it'll become unclickable (trough css)
@@ -37,7 +36,7 @@
 
 			//I couldn't find a way of finding the true root document (probably not even possible) so this has to do
 			//collection of pages in root
-			IEnumerable<IDocument> rootPages = Outputs["Content"];
+			DocumentList<IDocument> rootPages = Outputs["Content"];
 
 			foreach (var page in OrderPages(rootPages))
 			{
