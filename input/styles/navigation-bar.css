@@ -93,12 +93,3 @@
 	color: var(--dark-2);
 	position: absolute;
 }
-
-/* invisible button to show debug/test pages */
-button.debug-button {
-	background: none;
-	border: none;
-	padding: 0;
-	height: 100%;
-	width: 50px;
-}
