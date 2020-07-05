@@ -1,1 +1,21 @@
-﻿
+﻿@{
+	string[] keys = { Keys.Title, SiteKeys.AdditionalStyles, SiteKeys.AdditionalScripts };
+
+	//merge file metadata with settings
+	foreach (var key in keys)
+	{
+		var metadata = Document.Get(key);
+		if (metadata != null)
+			if (metadata is IEnumerable<dynamic> metadataCollection)
+				if (ViewData[key] is null)
+					ViewData[key] = metadataCollection;
+				else
+					ViewData[key] = new List<dynamic>
+					{
+						{ ViewData[key] as IEnumerable<dynamic> },
+						{ metadataCollection }
+					};
+			else
+				ViewData[key] = Document.Get(key);
+	}
+}

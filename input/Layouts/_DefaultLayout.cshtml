@@ -1,11 +1,4 @@
-﻿@using Statiq.Common
-@using Website
-@{ 
-	ViewData[SiteKeys.AdditionalStyles] = new string[0];
-	ViewData[SiteKeys.AdditionalScripts] = new string[0];
-	string title = ViewData[Keys.Title] as string ?? Document.GetString(Keys.Title);
-}
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -16,23 +9,23 @@
 	<link rel="stylesheet" href="/styles/navigation-bar.css">
 	<link rel="stylesheet" href="/styles/default-layout-style.css">
 	<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto">
-	<!--styles and scripts added by individual pages-->
-	@foreach (var style in ViewData[SiteKeys.AdditionalStyles] as IEnumerable<string>)
+	@* styles and scripts added by individual pages *@
+	@foreach (var style in ViewData[SiteKeys.AdditionalStyles] as IEnumerable<string> ?? new string[0])
 	{
 		<link rel="stylesheet" href="/styles/@style">
 	}
-	@foreach (var script in ViewData[SiteKeys.AdditionalScripts] as IEnumerable<string>)
+	@foreach (var script in ViewData[SiteKeys.AdditionalScripts] as IEnumerable<string> ?? new string[0])
 	{
 		<script src="/scripts/@script"></script>
 	}
 
-	<title>@title</title>
+	<title>@ViewData[Keys.Title]</title>
 </head>
 
 <body>
 	<header>
 		<img src="https://avatars3.githubusercontent.com/u/49595438?s=460&u=e5be0b122c48894eb3aed26e5cdc0a0316b7b121&v=4" alt="logo" id="logo">
-		<h1>@title</h1>
+		<h1>@ViewData[Keys.Title]</h1>
 	</header>
 	@Html.Partial("/_NavigationBar.cshtml")
 	<main>
