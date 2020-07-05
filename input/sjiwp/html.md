@@ -1,5 +1,4 @@
----
-layout: nav-dummy.njk
+Layout: /Layouts/_NavDummyLayout.cshtml
 eleventyNavigation:
   key: HTML
   parent: Sjiwp
