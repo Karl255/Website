@@ -1,16 +1,72 @@
-Layout: /Layouts/_DefaultLayout.cshtml
+﻿Layout: /Layouts/_DefaultLayout.cshtml
 Title: 8. Tool for shortening IPv6 addresses
 NavOrder: 8
 Date: 2020-01-12
-AdditionalStyles:
-  - rm-8-style.css
-AdditionalScripts:
-  - rm-8-script.js
 ---
+<style>
+	article.form {
+		margin: 12px;
+		display: flex;
+		flex-direction: column;
+		max-width: 360px;
+	}
+
+	label {
+		margin-top: .5em;
+	}
+</style>
+<script>
+	function shortenAddress() {
+		//getting the address, split into array and convert each element to a number (this removes leading zeros)
+		let address = document.getElementById("longAddress").value.split(":").map(x => parseInt(x, 16));
+		let start = 0;
+		let end = 0;
+		//searching for the longest sequence of 0 values
+		for (let i = 0; i < 8; i++) {
+			if (address[i] === 0) {
+				//first 0 found, saving its index and iterating trough the remaining 0s in the sequence
+				let tempStart = i;
+				while (i < 8 && address[i] === 0) {
+					i++;
+				}
+				//index of last 0
+				let tempEnd = i;
+
+				//if the sequence length is larger than the previous one
+				//and if the sequence isn't 1 long and at the start or end
+				if (tempEnd - tempStart > end - start && !(tempEnd - tempStart < 2 && (tempStart === 0 || tempStart === 7))) {
+					//save indecies
+					start = tempStart;
+					end = tempEnd;
+				}
+			}
+		}
+
+		//if a sequence has been found
+		if (end - start > 0) {
+			//replace the sequence with an empty string
+			//this will later cause a double colon (::)
+			address.splice(start, end - start, "");
+
+			//fixes for when the sequence starts at the start or ends at the end
+			//will add an empty string to that side, this is needed for a double colon to appear
+			if (start === 0) {
+				address.unshift("");
+			}
+			if (end === 8) {
+				address.push("");
+			}
+		}
+		//serializing into the normal IPv6 form
+		//convert each number to hex string (empty strings stay empty strings) and join with :
+		document.getElementById("shortAddress").value = address.map(x => x.toString(16)).join(":");
+	}
+</script>
+
 <article class="form">
-  <label for="longAddress">Full IPv6 address:</label>
-  <input id="longAddress" type="text">
-  <label for="shortAddress">Shortened IPv6 address:</label>
-  <input id="shortAddress" type="text">
-  <button class="button" onclick="shortenAddress()">Shorten address</button>
+	<label for="longAddress">Full IPv6 address:</label>
+	<input id="longAddress" type="text">
+	<label for="shortAddress">Shortened IPv6 address:</label>
+	<input id="shortAddress" type="text">
+	<button class="button" onclick="shortenAddress()">Shorten address</button>
 </article>

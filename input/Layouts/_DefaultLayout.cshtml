@@ -24,14 +24,12 @@
 
 <body>
 	<header>
-		<img src="https://avatars3.githubusercontent.com/u/49595438?s=460&u=e5be0b122c48894eb3aed26e5cdc0a0316b7b121&v=4" alt="logo" id="logo">
+		<img class="logo" src="https://avatars3.githubusercontent.com/u/49595438?s=460&u=e5be0b122c48894eb3aed26e5cdc0a0316b7b121&v=4" alt="logo">
 		<h1>@ViewData[Keys.Title]</h1>
 	</header>
 	@Html.Partial("/_NavigationBar.cshtml")
 	<main>
-		<article>
-			@RenderBody()
-		</article>
+		@RenderBody()
 	</main>
 </body>
 

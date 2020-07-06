@@ -15,7 +15,7 @@ header > * {
 	margin: 8px;
 }
 
-#logo {
+.logo {
 	width: 48px;
 	height: 48px;
 	border-radius: 50%;
@@ -23,20 +23,13 @@ header > * {
 
 main {
 	flex-grow: 1;
-	display: flex;
-	justify-content: center;
-}
-
-main > article {
 	background-color: white;
+	margin: 0 10%;
 	box-shadow: #0005 0px 0px 6px 4px;
-	height: 100%;
-	width: 80%;
-	padding: 8px;
 }
 
-@media screen and (max-width: 480px) {
-	main > article {
-		width: 100%;
+@media screen and (max-width: 720px) {
+	main {
+		margin: 0;
 	}
 }
