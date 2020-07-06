@@ -1,4 +1,4 @@
-name: CD
+name: Deploy to Netlify
 
 on:
   push:
@@ -15,8 +15,7 @@ jobs:
     - uses: actions/setup-dotnet@v1.5.0
       with:
         dotnet-version: '3.1'
-    - name: Build and deploy
-      run: dotnet run -- deploy
+    - run: dotnet run -- deploy
       env:
         NETLIFY_TOKEN: ${{ secrets.NETLIFY_TOKEN }}
         NETLIFY_WEBSITE_ID: ${{ secrets.NETLIFY_WEBSITE_ID }}
