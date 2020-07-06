@@ -26,6 +26,8 @@ main {
 	background-color: white;
 	margin: 0 10%;
 	box-shadow: #0005 0px 0px 6px 4px;
+	margin: 0 10%;
+	padding: 12px;
 }
 
 @media screen and (max-width: 720px) {
