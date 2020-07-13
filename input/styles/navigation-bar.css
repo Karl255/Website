@@ -82,7 +82,7 @@
 	content: " ›";
 }
 
-.branch .branch:hover::after {
+.branch .branch:hover::before {
 	content: " ";
 	/* triangle shape */
 	border-top: 6px solid transparent;
@@ -90,6 +90,6 @@
 	border-left: 6px solid var(--accent-light);
 	
 	top: 11px;
-	color: var(--dark-2);
+	right: -5px;
 	position: absolute;
 }
