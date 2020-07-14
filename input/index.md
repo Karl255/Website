@@ -1,4 +1,3 @@
-Layout: /Layouts/_DefaultLayout.cshtml
 Title: HOME
 NavOrder: -1
 ---

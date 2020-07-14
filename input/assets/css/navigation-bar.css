@@ -16,7 +16,7 @@
 
 /* the navigation bar itself */
 .navigation-bar {
-	background-color: var(--dark-2);
+	/* background-color: var(--dark-2); */
 	display: flex;
 	z-index: 1; /* prevents shadow dropping onto navigation bar */
 }
