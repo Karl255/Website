@@ -36,3 +36,15 @@ header {
 main {
 	grid-column: content-start / content-end;
 }
+
+/* not used atm
+.deco {
+	position: fixed;
+	height: 100%;
+	z-index: -1;
+}
+
+.deco-left {
+	grid-column: content-start / page-start;
+}
+*/

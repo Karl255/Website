@@ -1,0 +1,76 @@
+* {
+	box-sizing: border-box;
+}
+
+/* variables */
+:root {
+	--accent-lighter: #11d473;
+	--accent-standard: #18a55e;
+	--accent-darker: #129252;
+	--dark-1: #202020;
+	--dark-2: #303030;
+	--dark-3: #404040;
+}
+
+html,
+body {
+	margin: 0;
+	height: 100%;
+}
+
+/* links */
+a {
+	color: var(--accent-lighter);
+	text-decoration: none;
+
+	&:hover {
+		text-decoration: underline solid 1px;
+	}
+}
+
+/* inline code and code blocks */
+code,
+pre.code {
+	font-size: 14px;
+	font-family: "JetBrains Mono", Consolas, monospace;
+	background-color: var(--dark-2);
+	padding: 2px 4px;
+	border-radius: 5px;
+	border: 1px solid var(--dark-3)
+}
+
+/* buttons */
+.button {
+	font-size: .875em;
+	color: white;
+	background: var(--accent-standard);
+	border: none;
+	border-radius: 5px;
+	margin: 6px;
+	padding: 8px 14px;
+	cursor: pointer;
+	transition: background .1s ease-out;
+	
+	&:hover{
+		background-color: var(--accent-lighter);
+	}
+}
+
+/* text/input boxes */
+input[type="text"],
+input[tpye="number"] {
+	background-color: var(--dark-2);
+	font-size: .875em;
+	margin: 6px;
+	padding: 8px 12px;
+	border: 1px solid var(--dark-1);
+	border-radius: 5px;
+	transition: border .1s ease-out;
+	
+	&:focus,
+	&:hover {
+		border-color: var(--dark-3);
+		outline: none;
+	}
+}
+	

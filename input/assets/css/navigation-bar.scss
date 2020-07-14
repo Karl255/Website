@@ -9,7 +9,7 @@
 }
 
 .navigation-bar li:hover > a {
-	background-color: var(--accent-light);
+	background-color: var(--accent-lighter);
 	color: black;
 	text-decoration: none;
 }
@@ -36,13 +36,14 @@
 /* needed so the dropdown can be absolute and not make the navigation bar expand */
 .branch {
 	position: relative;
+
+	/* a elements of branches have no page so disable ability to click it */
+	& > a {
+		cursor: default;
+		pointer-events: none;
+	}
 }
 
-/* a elements of branches have no page so disable ability to click it */
-.branch > a {
-	cursor: default;
-	pointer-events: none;
-}
 
 /* all dropdowns */
 /* hide by default */
@@ -82,12 +83,13 @@
 	content: " ›";
 }
 
+/* decoration for hovered level >1 dropdowns */
 .branch .branch:hover::before {
 	content: " ";
 	/* triangle shape */
 	border-top: 6px solid transparent;
 	border-bottom: 6px solid transparent;
-	border-left: 6px solid var(--accent-light);
+	border-left: 6px solid var(--accent-lighter);
 	
 	top: 11px;
 	right: -5px;
