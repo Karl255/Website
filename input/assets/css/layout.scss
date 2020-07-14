@@ -29,6 +29,10 @@ header {
 		nav {
 			flex-grow: 1;
 		}
+
+		@media screen and (max-width: 720px) {
+			grid-column: page-start / page-end;
+		}
 	}
 }
 
