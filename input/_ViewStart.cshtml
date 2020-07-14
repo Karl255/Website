@@ -1,5 +1,12 @@
 ﻿@{
-	string[] keys = { Keys.Title, SiteKeys.AdditionalStyles, SiteKeys.AdditionalScripts };
+	//this code merges front matter data into the ViewData dictionary
+	if (Document.GetString(Keys.Title) != null)
+	{
+		ViewData[Keys.Title] = Document.GetString(Keys.Title);
+	}
+
+	/*
+	string[] keys = { Keys.Title };
 
 	//merge file metadata with settings
 	foreach (var key in keys)
@@ -7,6 +14,7 @@
 		var metadata = Document.Get(key);
 		if (metadata != null)
 			if (metadata is IEnumerable<dynamic> metadataCollection)
+				//if it's a collection, merge them
 				if (ViewData[key] is null)
 					ViewData[key] = metadataCollection;
 				else
@@ -16,6 +24,8 @@
 						{ metadataCollection }
 					};
 			else
+				//if it's a simple value, overwrite it
 				ViewData[key] = Document.Get(key);
 	}
+	*/
 }

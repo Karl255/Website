@@ -355,3 +355,6 @@ MigrationBackup/
 # Statiq
 output
 temp
+
+# VS Code
+.vscode

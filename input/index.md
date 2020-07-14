@@ -1,5 +1,7 @@
-Layout: /Layouts/_DefaultLayout.cshtml
 Title: HOME
 NavOrder: -1
 ---
-This is my personal website where I'll host some personal and school projects.
+
+# Hi
+
+This is my personal website where I'll share my projects and other work. Feel free to contact me using the info on the [about](/about) page.
