@@ -9,6 +9,10 @@ body {
 	display: grid;
 	grid-template-columns: [page-start] 1fr [content-start] 80vw [content-end] 1fr [page-end];
 	grid-template-rows: [page-start] auto [content-start] 1fr [content-end];
+	
+	@media screen and (max-width: 720px) {
+		grid-template-columns: [page-start] 1fr [content-start] 95vw [content-end] 1fr [page-end];
+	}
 }
 
 header {
@@ -35,7 +39,12 @@ header {
 
 main {
 	grid-column: content-start / content-end;
+
+	p {
+		max-width: 70ch;
+	}
 }
+
 
 /* not used atm
 .deco {

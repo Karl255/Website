@@ -15,7 +15,6 @@
 html,
 body {
 	margin: 0;
-	height: 100%;
 }
 
 /* links */
@@ -40,7 +39,9 @@ pre.code {
 }
 
 /* buttons */
-.button {
+.button,
+input[type="button"],
+input[tpye="submit"] {
 	font-size: .875em;
 	color: white;
 	background: var(--accent-standard);
