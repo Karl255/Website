@@ -9,7 +9,7 @@
 }
 
 .navigation-bar li:hover > a {
-	background-color: var(--accent-lighter);
+	background-color: var(--accent-standard);
 	color: black;
 	text-decoration: none;
 }
@@ -89,7 +89,7 @@
 	/* triangle shape */
 	border-top: 6px solid transparent;
 	border-bottom: 6px solid transparent;
-	border-left: 6px solid var(--accent-lighter);
+	border-left: 6px solid var(--accent-standard);
 	
 	top: 11px;
 	right: -5px;

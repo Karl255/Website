@@ -2,17 +2,18 @@
 	box-sizing: border-box;
 }
 
-/* variables */
 :root {
-	--accent-lighter: #11d473;
-	--accent-standard: #18a55e;
-	--accent-darker: #129252;
+	color: whitesmoke;
+	font-family: "Roboto", sans-serif;
+	font-size: 16px;
+	--accent-lighter: #1FC281;
+	--accent-standard: #1DB578;
+	--accent-darker: #199C67;
 	--dark-1: #202020;
 	--dark-2: #303030;
 	--dark-3: #404040;
 }
 
-html,
 body {
 	margin: 0;
 }
@@ -43,7 +44,7 @@ pre.code {
 input[type="button"],
 input[tpye="submit"] {
 	font-size: .875em;
-	color: white;
+	color: inherit;
 	background: var(--accent-standard);
 	border: none;
 	border-radius: 5px;
