@@ -30,6 +30,13 @@ main a {
 	}
 }
 
+a[href^="http"]::after {
+	content: "\f08e";
+	font-family: "FontAwesome";
+	font-size: 0.8em;
+	margin: 2px;
+}
+
 /* inline code and code blocks */
 code,
 pre.code {

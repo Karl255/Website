@@ -1,5 +1,5 @@
 <nav class="navigation-bar branch">
-	<a class="disabled" href="#">☰</a>
+	<a class="material-icons" href="#">menu</a>
 	<ul class="navigation-root">
 		@{
 			IOrderedEnumerable<IDocument> OrderPages(IEnumerable<IDocument> documents) =>
@@ -16,7 +16,7 @@
 					//if it has children, it'll become unclickable (trough css)
 					//this is on purpose since I never need the page at the branch
 					<li class="branch">
-						<a class="disabled" href=".">@document.GetTitle()</a>
+						<a class="disabled" href="#">@document.GetTitle()</a>
 						<ul>
 							@{
 								//render all its children recursively
