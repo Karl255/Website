@@ -34,7 +34,8 @@
 			display: none !important;
 		}
 
-		li:hover > a {
+		li:hover > a,
+		li:focus-within > a {
 			background-color: var(--accent-standard);
 			color: black;
 		}
@@ -51,8 +52,9 @@
 				transition: all 200ms ease-out;
 			}
 
-			// unhide on hover
-			&:hover > ul {
+			// show on hover
+			&:hover > ul,
+			&:focus-within > ul {
 				opacity: 1;
 				visibility: visible;
 			}
@@ -65,14 +67,18 @@
 			}
 
 			& > .branch {
+				// dropdown positioning
 				& > ul {
 					display: block;
 					transform: translateY(50px);
 				}
-				&:hover > ul {
+				
+				&:hover > ul,
+				&:focus-within > ul {
 					transform: none;
 				}
 
+				// dropdown indicator ›
 				& > a::after {
 					position: absolute;
 					bottom: 2px;
@@ -80,11 +86,14 @@
 					transform: translateX(50%);
 					writing-mode: vertical-rl;
 				}
-				&:hover::after {
+
+				// decoration for hovered dropdowns
+				&:hover::after,
+				&:focus-within::after {
 					border-top: 6px solid var(--accent-standard);
 					border-left: 6px solid transparent;
 					top: unset;
-					bottom: -12px;
+					bottom: -11px;
 					right: 50%;
 					transform: translateX(50%);
 				}
@@ -98,17 +107,19 @@
 				transform: translateX(50px);
 			}
 
-			&:hover > ul {
+			&:hover > ul,
+			&:focus-within > ul {
 				transform: none;
 			}
 
-			// dropdown(right) indicator
+			// dropdown(right) indicator ›
 			& > a::after {
 				content: " ›";
 			}
 
-			// decoration hovered dropdowns(rights)
-			&:hover::after {
+			// decoration for hovered dropdowns(rights)
+			&:hover::after,
+			&:focus-within::after {
 				content: " ";
 				// triangle shape
 				border-top: 6px solid transparent;
@@ -116,7 +127,7 @@
 				border-left: 6px solid var(--accent-standard);
 				border-right: 6px solid transparent;
 
-				right: -12px;
+				right: -11px;
 				top: 50%;
 				transform: translateY(-50%);
 				position: absolute;
@@ -146,6 +157,7 @@
 		}
 	}
 	
+	// navigation drawer stuff
 	.navigation-root {
 		background-color: var(--dark-2);
 		position: absolute;
@@ -157,9 +169,11 @@
 		transition: 200ms ease-out;
 	}
 	
-	// open when the ☰ icon is tapped
+	// open drawer when the ☰ icon or something iside is tapped (stays open until unfocused)
 	.navigation-root:hover,
-	a:hover + .navigation-root {
+	.navigation-root:focus-within
+	a:hover + .navigation-root,
+	a:focus + .navigation-root {
 		transform: none;
 		box-shadow: #0004 100px 0 0 1000px;
 	}
