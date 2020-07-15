@@ -10,7 +10,7 @@
 	a {
 		color: whitesmoke;
 		display: inline-block;
-		padding: 8px 12px;
+		padding: 8px 10px;
 		position: relative;
 		text-decoration: none;
 		white-space: nowrap;
@@ -62,6 +62,9 @@
 
 		// level 1 dropdowns only
 		.navigation-root {
+			// just to remove the whitespace (a single space) between the items
+			display: flex;
+
 			& > li {
 				display: inline-block;
 			}
@@ -160,7 +163,7 @@
 		background-color: var(--dark-2);
 		position: absolute;
 		top: 48px;
-		bottom: 0;
+		height: calc(100vh - 48px);
 
 		transform: translateX(-100%);
 		transition-property: transform box-shadow;
