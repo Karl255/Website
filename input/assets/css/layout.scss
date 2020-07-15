@@ -11,12 +11,14 @@ body {
 
 header {
 	background-color: var(--dark-2);
+	font-weight: 300;
+	position: sticky;
 	height: 36px;
+	top: 0;
+
 	grid-column: page-start / page-end;
 	display: grid;
 	grid-template-columns: inherit;
-	position: sticky;
-	top: 0;
 
 	.container {
 		grid-column: content-start / content-end;
