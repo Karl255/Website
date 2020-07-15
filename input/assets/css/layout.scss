@@ -1,7 +1,7 @@
 body {
 	background-color: var(--dark-1);
 	display: grid;
-	grid-template-columns: [page-start] 1fr [content-start] 80vw [content-end] 1fr [page-end];
+	grid-template-columns: [page-start] 1fr [content-start] 70vw [content-end] 1fr [page-end];
 	grid-template-rows: [page-start] auto [content-start] 1fr [content-end];
 	
 	@media screen and (max-width: 720px) {
@@ -11,7 +11,11 @@ body {
 
 header {
 	background-color: var(--dark-2);
+	font-weight: 300;
+	position: sticky;
 	height: 36px;
+	top: 0;
+
 	grid-column: page-start / page-end;
 	display: grid;
 	grid-template-columns: inherit;

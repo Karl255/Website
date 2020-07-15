@@ -10,7 +10,7 @@
 	a {
 		color: whitesmoke;
 		display: inline-block;
-		padding: 8px 12px;
+		padding: 8px 10px;
 		position: relative;
 		text-decoration: none;
 		white-space: nowrap;
@@ -31,10 +31,11 @@
 
 		// hide the a in the root
 		& > a {
-			display: none !important;
+			display: none;
 		}
 
-		li:hover > a {
+		li:hover > a,
+		li:focus-within > a {
 			background-color: var(--accent-standard);
 			color: black;
 		}
@@ -51,8 +52,9 @@
 				transition: all 200ms ease-out;
 			}
 
-			// unhide on hover
-			&:hover > ul {
+			// show on hover
+			&:hover > ul,
+			&:focus-within > ul {
 				opacity: 1;
 				visibility: visible;
 			}
@@ -60,19 +62,26 @@
 
 		// level 1 dropdowns only
 		.navigation-root {
+			// just to remove the whitespace (a single space) between the items
+			display: flex;
+
 			& > li {
 				display: inline-block;
 			}
 
 			& > .branch {
+				// dropdown positioning
 				& > ul {
 					display: block;
 					transform: translateY(50px);
 				}
-				&:hover > ul {
+				
+				&:hover > ul,
+				&:focus-within > ul {
 					transform: none;
 				}
 
+				// dropdown indicator ›
 				& > a::after {
 					position: absolute;
 					bottom: 2px;
@@ -80,11 +89,14 @@
 					transform: translateX(50%);
 					writing-mode: vertical-rl;
 				}
-				&:hover::after {
+
+				// decoration for hovered dropdowns
+				&:hover::after,
+				&:focus-within::after {
 					border-top: 6px solid var(--accent-standard);
 					border-left: 6px solid transparent;
 					top: unset;
-					bottom: -12px;
+					bottom: -11px;
 					right: 50%;
 					transform: translateX(50%);
 				}
@@ -98,17 +110,19 @@
 				transform: translateX(50px);
 			}
 
-			&:hover > ul {
+			&:hover > ul,
+			&:focus-within > ul {
 				transform: none;
 			}
 
-			// dropdown(right) indicator
+			// dropdown(right) indicator ›
 			& > a::after {
 				content: " ›";
 			}
 
-			// decoration hovered dropdowns(rights)
-			&:hover::after {
+			// decoration for hovered dropdowns(rights)
+			&:hover::after,
+			&:focus-within::after {
 				content: " ";
 				// triangle shape
 				border-top: 6px solid transparent;
@@ -116,7 +130,7 @@
 				border-left: 6px solid var(--accent-standard);
 				border-right: 6px solid transparent;
 
-				right: -12px;
+				right: -11px;
 				top: 50%;
 				transform: translateY(-50%);
 				position: absolute;
@@ -131,10 +145,8 @@
 	.navigation-bar {
 		// ☰ icon
 		& > a {
-			line-height: 1;
-			font-size: 24px;
-			padding: 0 12px;
-			pointer-events: all !important;
+			font-size: 36px;
+			padding: 6px 8px;
 		}
 
 		.branch > a::after {
@@ -146,20 +158,23 @@
 		}
 	}
 	
+	// navigation drawer stuff
 	.navigation-root {
 		background-color: var(--dark-2);
 		position: absolute;
 		top: 48px;
-		bottom: 0;
+		height: calc(100vh - 48px);
 
 		transform: translateX(-100%);
 		transition-property: transform box-shadow;
 		transition: 200ms ease-out;
 	}
 	
-	// open when the ☰ icon is tapped
+	// open drawer when the ☰ icon or something iside is tapped (stays open until unfocused)
 	.navigation-root:hover,
-	a:hover + .navigation-root {
+	.navigation-root:focus-within
+	a:hover + .navigation-root,
+	a:focus + .navigation-root {
 		transform: none;
 		box-shadow: #0004 100px 0 0 1000px;
 	}

@@ -20,6 +20,19 @@ body {
 	margin: 0;
 }
 
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	font-weight: 300;
+}
+
+p {
+	font-weight: 400;
+}
+
 /* links */
 main a {
 	color: var(--accent-lighter);
@@ -30,11 +43,18 @@ main a {
 	}
 }
 
+a[href^="http"]::after {
+	content: "\f08e";
+	font-family: "FontAwesome";
+	font-size: 0.8em;
+	margin: 0 3px;
+}
+
 /* inline code and code blocks */
 code,
 pre.code {
 	font-size: 14px;
-	font-family: "JetBrains Mono", Consolas, monospace;
+	font-family: "JetBrains Mono", "Consolas", monospace;
 	background-color: var(--dark-2);
 	padding: 2px 4px;
 	border-radius: 5px;
