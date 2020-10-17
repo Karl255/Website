@@ -1,0 +1,31 @@
+body {
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	place-items: center top;
+	gap: 50px;
+	margin: 0 20%;
+}
+
+p,
+h1 {
+	font-family: sans-serif;
+	line-height: 1.5em;
+}
+
+p {
+	font-size: 14px;
+	text-align: justify;
+}
+
+h1 {
+	font-size: 18px;
+	font-weight: normal;
+	color: green;
+	text-align: center;
+}
+
+.stupac img {
+	float: right;
+	width: 45%;
+	margin: 1em;
+}
