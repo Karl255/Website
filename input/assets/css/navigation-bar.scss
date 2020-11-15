@@ -36,8 +36,7 @@
 			display: none;
 		}
 
-		li:hover > a,
-		li:focus-within > a {
+		li:hover > a{
 			background-color: var(--accent-standard);
 			color: black;
 		}
@@ -55,8 +54,7 @@
 			}
 
 			// show on hover
-			&:hover > ul,
-			&:focus-within > ul {
+			&:hover > ul{
 				opacity: 1;
 				visibility: visible;
 			}
@@ -78,8 +76,7 @@
 					transform: translateY(50px);
 				}
 
-				&:hover > ul,
-				&:focus-within > ul {
+				&:hover > ul{
 					transform: none;
 				}
 
@@ -93,8 +90,7 @@
 				}
 
 				// decoration for hovered dropdowns
-				&:hover::after,
-				&:focus-within::after {
+				&:hover::after{
 					border-top: 6px solid var(--accent-standard);
 					border-left: 6px solid transparent;
 					top: unset;
@@ -112,8 +108,7 @@
 				transform: translateX(50px);
 			}
 
-			&:hover > ul,
-			&:focus-within > ul {
+			&:hover > ul{
 				transform: none;
 			}
 
@@ -123,8 +118,7 @@
 			}
 
 			// decoration for hovered dropdowns(rights)
-			&:hover::after,
-			&:focus-within::after {
+			&:hover::after{
 				content: " ";
 				// triangle shape
 				border-top: 6px solid transparent;
@@ -161,10 +155,21 @@
 
 		li li {
 			padding-left: 12px;
+			position: relative;
+			
+			&::before {
+				content: " ";
+				background-color: #888;
+				position: absolute;
+				top: 0;
+				bottom: 0;
+				left: 4px;
+				width: 1px;
+			}
 		}
 	}
 
-	// navigation drawer stuff
+	// navigation drawer
 	ul.navigation-root {
 		background-color: var(--dark-2);
 		padding: 8px 16px;
