@@ -1,9 +1,9 @@
 ﻿@{
 	//this code merges front matter data into the ViewData dictionary
-	if (Document.GetString(Keys.Title) != null)
+	@* if (Document.ContainsKey(Keys.Title))
 	{
-		ViewData[Keys.Title] = Document.GetString(Keys.Title);
-	}
+		ViewData[Keys.Title] = Document.GetTitle();
+	} *@
 
 	/*
 	string[] keys = { Keys.Title };
