@@ -357,4 +357,8 @@ output
 temp
 
 # VS Code
-.vscode
+.vscode.DS_Store
+.svelte-kit
+package
+build
+functions

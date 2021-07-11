@@ -1,0 +1,90 @@
+body {
+	background-color: var(--color-ui-layer-2);
+	display: grid;
+	grid-template-columns: [page-start] 1fr [main-start] min(1200px, 100vw) [main-end] 1fr [page-end];
+	grid-template-rows: auto 1fr auto;
+}
+
+.subcontainer-main {
+	grid-column: main-start / main-end;
+}
+
+.flex-row-justify-self-end {
+	margin-left: auto;
+}
+
+.card-flow {
+	display: flex;
+	flex-flow: column nowrap;
+	gap: 16px;
+}
+
+.dummy {
+	display: none;
+}
+
+header {
+	background-color: var(--color-ui-layer-1);
+	border-bottom: 1px solid var(--color-border);
+
+	display: grid;
+	grid-column: page-start / page-end;
+	grid-template-columns: inherit;
+	
+	> * {
+		display: flex;
+		padding: 16px;
+		gap: 16px;
+		--cross-align-each-item: center;
+	}
+}
+
+main {
+	grid-column: main-start / main-end;
+	padding: 32px;
+}
+
+.columns-7-3 {
+	display: grid;
+	grid-template-columns: 7fr 3fr;
+	gap: 32px;
+	
+	/* mobile layout */
+	@media screen and (max-width: 720px) {
+		grid-template-columns: 1fr;
+	}
+}
+
+.cards {
+	display: flex;
+	flex-wrap: wrap;
+	--cross-align-content: start;
+	gap: 32px;
+	
+	> * {
+		flex-basis: 280px;
+		flex-grow: 1;
+	}
+}
+
+section,
+aside {
+	background-color: var(--color-ui-layer-3);
+	border: 1px solid var(--color-border);
+	border-radius: 8px;
+	padding: 16px;
+}
+
+footer {
+	font-size: 12px;
+	border-top: 1px solid var(--color-border);
+
+	background-color: var(--color-ui-layer-1);
+	grid-column: page-start / page-end;
+	grid-row: -2 / -1;
+
+	display: flex;
+	--main-align-content: center;
+	gap: 8px;
+	padding: 8px;
+}

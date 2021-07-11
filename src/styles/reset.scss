@@ -1,0 +1,94 @@
+*,
+::before,
+::after {
+	box-sizing: border-box;
+}
+
+:root {
+	font-size: 16px;
+	line-height: 1.5em;
+	font-family: sans-serif;
+}
+
+html {
+	height: 100vh;
+	display: grid;
+
+	&:focus-within {
+		scroll-behavior: smooth;
+	}
+}
+
+body {
+	text-rendering: optimizeLegibility;
+	margin: 0;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+figure,
+blockquote,
+pre,
+ul,
+ol,
+dl,
+dd,
+input {
+	margin: 0;
+}
+
+h1 {
+	font-size: 24px;
+}
+h2 {
+	font-size: 20px;
+}
+h3 {
+	font-size: 18px;
+}
+h4 {
+	font-size: 16px;
+}
+h5 {
+	font-size: 14px;
+}
+h6 {
+	font-size: 12px;
+}
+
+img,
+picture {
+	max-width: 100%;
+	display: block;
+}
+
+input,
+button,
+textarea,
+select {
+	font: inherit;
+	color: inherit;
+}
+
+textarea,
+input:not([type="button"]) {
+	background: none;
+}
+
+/* better names for flex properties */
+* {
+	/* aligning items along the main axis: start, center, end, space-*, stretch (default) */
+	justify-content: var(--main-align-content, initial);
+	/* aligning the content as a whole on the cross axis: start (default), center, end, space-*, stretch */
+	/* (only really visible with wrapping) */
+	align-content: var(--cross-align-content, initial);
+	/* aligning each individual items along the cross axis: start, center, end, stretch (default) */
+	align-items: var(--cross-align-each-item, initial);
+	/* overrides the value set in the flex container (align-items) for the flex item */
+	align-self: var(--cross-align-self, initial);
+}
