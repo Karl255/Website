@@ -13,4 +13,4 @@
 This website is built using the Jamstack tech-stack [SvelteKit](https://kit.svelte.dev) and is hosted for free on [Netlify](https://netlify.com). The website source is available on [GitHub](https://github.com/Karl255/Website).
 
 # Contact info:
-<HiddenHTML encodedHTML="RGlzY29yZDoga2FybCMyMjMwPGJyPkUtbWFpbDoga2FybG8uYmlzdHJpY2tpMjU2QGdtYWlsLmNvbQ==" />
+<HiddenHTML encodedHTML="RS1tYWlsOiBrYXJsby5iaXN0cmlja2kyNTZAZ21haWwuY29t" />
