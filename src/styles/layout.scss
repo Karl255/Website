@@ -34,14 +34,23 @@ header {
 	> * {
 		display: flex;
 		padding: 16px;
-		gap: 16px;
+		gap: 32px;
 		--cross-align-each-item: center;
+		
+		> ul {
+			display: flex;
+		}
+	}
+	
+	ul {
+		list-style: none;
+		padding: 0;
 	}
 }
 
 main {
 	grid-column: main-start / main-end;
-	padding: 32px;
+	padding: 16px;
 }
 
 .columns-7-3 {
@@ -67,8 +76,7 @@ main {
 	}
 }
 
-section,
-aside {
+section {
 	background-color: var(--color-ui-layer-3);
 	border: 1px solid var(--color-border);
 	border-radius: 8px;

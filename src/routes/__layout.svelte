@@ -1,5 +1,6 @@
 <script>
 	import "../styles/main.scss";
+	import NavigationDropdown from "$lib/NavigationDropdown.svelte";
 	import { pageTitle } from "$lib/pageStores.js";
 	
 	let title;
@@ -13,9 +14,18 @@
 <header>
 	<div class="subcontainer-main">
 		<h1>{title}</h1>
-		<a href=".">Home</a>
-		<a href="/converter">Converter</a>
-		<a href="/about">About & Contact</a>
+		<ul>
+			<li><a href=".">Home</a></li>
+			<li>
+				<NavigationDropdown title="Tools">
+					<a href="/converter">Converter</a>
+					<a href=".">Fake link 1</a>
+					<a href=".">Fake link 2</a>
+					<a href=".">Fake link 3</a>
+				</NavigationDropdown>
+			</li>
+			<li><a href="/about">About & Contact</a></li>
+		</ul>
 	</div>
 </header>
 <main>
