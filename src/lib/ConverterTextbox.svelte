@@ -6,10 +6,13 @@
 	let value = "";
 	
 	byteStream.subscribe(stream => {
-		if (typeof encoder === "function")
-			value = encoder(stream)
+		if (typeof encoder === "function") {
+			let str = encoder(stream)
+			
+			if (str)
+				value = str;
+		}
 	});
-	
 	
 	function handleInput(event) {
 		let stream = decoder(event.srcElement.value);
@@ -17,8 +20,8 @@
 		if (stream) 
 			byteStream.set(stream);
 	}
-	
 </script>
+
 <section>
 	<h3>{@html title}</h3>
 	<textarea rows=5 on:input={handleInput} bind:value={value}></textarea>
