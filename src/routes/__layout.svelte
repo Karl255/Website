@@ -15,10 +15,15 @@
 	<div class="subcontainer-main">
 		<h1>{title}</h1>
 		<ul>
-			<li><a href=".">Home</a></li>
+			<li><a href="/">Home</a></li>
 			<li>
 				<NavigationDropdown title="Tools">
 					<a href="/tools/converter">Universal converter</a>
+				</NavigationDropdown>
+			</li>
+			<li>
+				<NavigationDropdown title="Blog">
+					<a href="/blog/test-post">Test blog</a>
 				</NavigationDropdown>
 			</li>
 			<li><a href="/about">About & Contact</a></li>
@@ -28,6 +33,7 @@
 <main>
 	<slot></slot>
 </main>
-<footer>
-	<span>Copyleft <span style="display: inline-block; transform: scaleX(-1)">©</span> Karl</span>
-</footer>
+<!--
+	<footer>
+	</footer>
+-->

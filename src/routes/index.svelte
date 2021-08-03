@@ -7,7 +7,7 @@
 </script>
 
 <div class="columns-7-3">
-	<div class="card-flow">
+	<div class="vertical-flow">
 		<!-- main page content -->
 		<section>
 			<h1>Home page</h1>
@@ -15,7 +15,7 @@
 		</section>
 	</div>
 	
-	<aside class="card-flow">
+	<aside class="vertical-flow">
 		<!-- side content, such as navigations of some kind -->
 		<section>
 			<h3>Feedback</h3>
