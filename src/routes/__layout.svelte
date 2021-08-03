@@ -19,9 +19,9 @@
 			<li>
 				<NavigationDropdown title="Tools">
 					<a href="/converter">Converter</a>
-					<a href=".">Fake link 1</a>
-					<a href=".">Fake link 2</a>
-					<a href=".">Fake link 3</a>
+					<a href="#">Fake link 1</a>
+					<a href="#">Fake link 2</a>
+					<a href="#">Fake link 3</a>
 				</NavigationDropdown>
 			</li>
 			<li><a href="/about">About & Contact</a></li>

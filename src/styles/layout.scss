@@ -36,6 +36,7 @@ header {
 		padding: 16px;
 		gap: 32px;
 		--cross-align-each-item: center;
+		--main-align-content: space-between;
 		
 		> ul {
 			display: flex;
