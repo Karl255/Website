@@ -18,10 +18,7 @@
 			<li><a href=".">Home</a></li>
 			<li>
 				<NavigationDropdown title="Tools">
-					<a href="/converter">Converter</a>
-					<a href="#">Fake link 1</a>
-					<a href="#">Fake link 2</a>
-					<a href="#">Fake link 3</a>
+					<a href="/tools/converter">Universal converter</a>
 				</NavigationDropdown>
 			</li>
 			<li><a href="/about">About & Contact</a></li>
