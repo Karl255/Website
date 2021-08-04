@@ -47,7 +47,13 @@ header {
 		list-style: none;
 		padding: 0;
 	}
+	
+	a {
+		display: block;
+		padding: 4px 12px;
+	}
 }
+
 
 main {
 	grid-column: main-start / main-end;
@@ -81,13 +87,8 @@ main {
 }
 
 .blog-post {
-	width: min(100%, 80ch);
+	width: min(100%, 60ch);
 	align-self: center;
-	
-	> h1 {
-		font-size: 36px;
-		text-align: center;
-	}
 }
 
 section {
@@ -109,4 +110,8 @@ footer {
 	--main-align-content: center;
 	gap: 8px;
 	padding: 8px;
+}
+
+#disqus_thread {
+	margin-top: 32px;
 }
