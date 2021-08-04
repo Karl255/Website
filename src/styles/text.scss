@@ -1,4 +1,9 @@
 @use "base";
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,400;0,700;1,400&family=Roboto+Slab:wght@400;700&display=swap');
+
+:root {
+	font-family: "Montserrat";
+}
 
 // set accent color for headings
 h1,
@@ -8,9 +13,20 @@ h4,
 h5,
 h6 {
 	color: var(--color-accent-300);
+	font-family: "Roboto Slab";
 
 	main * + & {
-		margin-top: 16px;
+		margin-top: 32px;
+	}
+}
+
+.blog-post {
+	> h1 {
+		font-size: 36px;
+	}
+	
+	> section {
+		margin-top: 32px;
 	}
 }
 
@@ -37,7 +53,7 @@ textarea,
 button,
 input[type="button"] {
 	main * + & {
-		margin-top: 8px;
+		margin-top: 16px;
 	}
 }
 
@@ -50,11 +66,6 @@ a {
 	&:active {
 		text-decoration: 1px solid underline;
 	}
-}
-
-header a {
-	display: block;
-	padding: 4px 12px;
 }
 
 textarea {

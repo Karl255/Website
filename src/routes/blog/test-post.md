@@ -1,13 +1,14 @@
 <script>
 	// page title store which is read by the layout
-	import { pageTitle } from "$lib/pageStores.js";
+	import { blogPostTitle, blogPostSubtitle } from "$lib/pageStores.js";
 	
-	const title = "Test post";
-	pageTitle.set(title);
+	const title = "Test blog post and nothing else";
+	const subtitle = "Don't even bother reading this";
+	blogPostTitle.set(title);
+	blogPostSubtitle.set(subtitle);
 </script>
 
-# Test blog
-In this blog, I won't go over literally anything. The rest will just be fillter text.
+In this blog post, I won't go over literally anything. The rest will just be fillter text.
 
 Lorem ipsum dolor sit amet consectetur adipisicing elit. Perferendis, laboriosam. A dolore veritatis temporibus culpa impedit quibusdam necessitatibus quod repellendus, obcaecati, earum deserunt autem quis ratione facere, velit ducimus. Odit quisquam omnis ab impedit nostrum repudiandae perferendis, itaque et veritatis commodi aspernatur nemo iusto eius atque vel ex laudantium repellendus.
 
