@@ -14,3 +14,5 @@ This website is built using the Jamstack tech-stack [SvelteKit](https://kit.svel
 
 # Contact info:
 <HiddenHTML encodedHTML="RS1tYWlsOiBrYXJsby5iaXN0cmlja2kyNTZAZ21haWwuY29t" />
+
+I also have Discord, but since my username and/or tag change somewhat frequently, you'll have to ask for my current handle if Discord is your preferred communication medium.
