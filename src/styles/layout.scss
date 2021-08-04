@@ -13,7 +13,7 @@ body {
 	margin-left: auto;
 }
 
-.card-flow {
+.vertical-flow {
 	display: flex;
 	flex-flow: column nowrap;
 	gap: 16px;
@@ -36,6 +36,7 @@ header {
 		padding: 16px;
 		gap: 32px;
 		--cross-align-each-item: center;
+		--main-align-content: space-between;
 		
 		> ul {
 			display: flex;
@@ -51,6 +52,9 @@ header {
 main {
 	grid-column: main-start / main-end;
 	padding: 16px;
+	display: flex;
+	flex-direction: column;
+	place-items: start;
 }
 
 .columns-7-3 {
@@ -73,6 +77,16 @@ main {
 	> * {
 		flex-basis: 280px;
 		flex-grow: 1;
+	}
+}
+
+.blog-post {
+	width: min(100%, 80ch);
+	align-self: center;
+	
+	> h1 {
+		font-size: 36px;
+		text-align: center;
 	}
 }
 
