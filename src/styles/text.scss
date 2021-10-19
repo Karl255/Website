@@ -3,96 +3,33 @@
 
 :root {
 	font-family: "Montserrat";
+	font-size: 16px;
+	line-height: 1.5;
 }
 
-// set accent color for headings
-h1,
-h2,
-h3,
-h4,
-h5,
+h1 {
+	font-size: 2rem; // 32px
+}
+h2 {
+	font-size: 1.75rem; // 28px
+}
+h3 {
+	font-size: 1.5rem; // 24px
+}
+h4 {
+	font-size: 1.25rem; // 20px
+}
+h5 {
+	font-size: 1.125rem; // 18px
+}
 h6 {
-	color: var(--color-accent-300);
-	font-family: "Roboto Slab";
-
-	main * + & {
-		margin-top: 32px;
-	}
+	font-size: 1rem; // 16px
 }
 
-.blog-post {
-	> h1 {
-		font-size: 36px;
-	}
-	
-	> section {
-		margin-top: 32px;
-	}
-}
-
-// consistent margin and line height for all (I hope) text elements
-h1,
-h2,
-h3,
-h4,
-h5,
-h6,
-p,
-img,
+input,
+button,
 textarea,
-button,
-input[type="button"] {
-	main & {
-		line-height: 1.5;
-	}
-}
-
-p,
-img,
-textarea,
-button,
-input[type="button"] {
-	main * + & {
-		margin-top: 16px;
-	}
-}
-
-a {
-	color: var(--color-accent-400);
-	text-decoration: none;
-
-	&:hover,
-	&:focus,
-	&:active {
-		text-decoration: 1px solid underline;
-	}
-}
-
-textarea {
-	border: 1px solid var(--color-border);
-	outline: none; // technically only affects it while focused
-	transition: border-color 100ms ease;
-	width: 100%;
-	resize: vertical;
-
-	&:focus {
-		border-color: var(--color-border-focus);
-	}
-}
-
-// buttons
-button,
-input[type="button"] {
-	border: none;
-	background-color: var(--color-accent-400);
-	border-radius: 4px;
-	padding: 4px 12px;
-	transition: background-color 100ms ease;
-	outline: none;
-
-	&:hover,
-	&:focus {
-		background-color: var(--color-accent-300);
-		cursor: pointer;
-	}
+select {
+	font: inherit;
+	color: inherit;
 }
