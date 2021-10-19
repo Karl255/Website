@@ -13,6 +13,7 @@
 	.hero {
 		grid-column: 2 / -2;
 		gap: 1rem;
+		font-size: 1.25rem; // 20px
 		
 		h1 {
 			grid-column: 1 / 5;
@@ -23,7 +24,6 @@
 			grid-column: 1 / 4;
 			grid-row: 2;
 			
-			font-size: 1.25rem; // 20px
 		}
 		
 		a {
@@ -34,6 +34,16 @@
 		img {
 			grid-column: 4 / 7;
 			grid-row: 1 / span 4;
+		}
+		
+		@media (max-width: 768px) {
+			h1, p, a, img {
+				grid-column: 1 / -1;
+			}
+			
+			img {
+				grid-row: 4;
+			}
 		}
 	}
 	

@@ -9,9 +9,8 @@ body {
 	gap: 1rem;
 	align-content: start; // to prevent grid from stretching all the rows to fill the screen (but still keeping the body's min-height of 100vh)
 	
-	
-	background-image: url(/hex-pattern.png);
-	background-color: hsl(0 0% 9%);
+	$accent-sides-size: 10%;
+	background-image: url(/hex-pattern.png), linear-gradient(to right, var(--accent-400), hsl(0 0% 9%) #{$accent-sides-size}, hsl(0 0% 9%) calc(100% - #{$accent-sides-size}), var(--accent-400));
 	background-blend-mode: multiply;
 	background-position: center;
 }
