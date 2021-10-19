@@ -1,0 +1,7 @@
+@mixin grid-template-column-subgrid {
+	grid-template-columns: subgrid;
+	
+	@supports not (grid-template-columns: subgrid) {
+		grid-template-columns: inherit;
+	}
+}

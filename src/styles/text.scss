@@ -4,7 +4,7 @@
 :root {
 	font-family: "Montserrat";
 	font-size: 16px;
-	line-height: 1.5;
+	line-height: 1.7;
 }
 
 h1 {
@@ -32,4 +32,37 @@ textarea,
 select {
 	font: inherit;
 	color: inherit;
+}
+
+h1, h2, h3, h4, h5, h6, p {
+	margin: 0;
+}
+
+.text-flow {
+	* + :is(h1, h2, h3, h4, h5, h6) {
+		margin-top: 1rem;
+	}
+	
+	* + :-webkit-any(h1, h2, h3, h4, h5, h6) {
+		margin-top: 1rem;
+	}
+	
+	* + p {
+		margin-top: .5rem;
+	}
+	
+	* + p {
+		margin-top: .5rem;
+	}
+}
+
+a {
+	body > :not(nav) & {
+		color: var(--accent-400);
+	}
+	
+	&.disabled {
+		pointer-events: none;
+		cursor: default;
+	}
 }

@@ -1,0 +1,24 @@
+@use "mixins";
+
+body {
+	--column-count: 6;
+	--content-width: 60rem;
+	display: grid;
+	grid-template-columns: minmax(1rem, 1fr) repeat(var(--column-count), minmax(0, calc(var(--content-width) / var(--column-count)))) minmax(1rem, 1fr);
+	grid-auto-rows: auto;
+	gap: 1rem;
+	align-content: start; // to prevent grid from stretching all the rows to fill the screen (but still keeping the body's min-height of 100vh)
+	
+	
+	background-image: url(/hex-pattern.png);
+	background-color: hsl(0 0% 9%);
+	background-blend-mode: multiply;
+	background-position: center;
+}
+
+body > * {
+	grid-column: 1 / -1;
+	
+	display: grid;
+	@include mixins.grid-template-column-subgrid;
+}
