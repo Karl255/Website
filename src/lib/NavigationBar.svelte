@@ -8,7 +8,7 @@
 				<li><a href="/tools/converter">Universal converter</a></li>
 			</ul>
 		</li>
-		<li class="branch">
+		<li class="branch hidden">
 			<a href="#" class="disabled">Blog</a>
 			<ul>
 				<li><a href="/blog/test-post">Test post</a></li>
@@ -40,8 +40,10 @@
 		justify-content: center;
 		
 		> ul {
+			background-color: var(--bg-100);
+			border-radius: var(--radius-regular);
+			
 			display: none;
-		
 			position: absolute;
 			top: 100%;
 			
@@ -58,6 +60,43 @@
 		text-decoration: none;
 		
 		display: block;
-		padding: 16px 24px;
+		padding: var(--padding-large);
+	}
+	
+	// nav link hover deco
+	// above text at the screen edge
+	nav li {
+		position: relative;
+		
+		&::before {
+			content: "";
+			background-color: var(--accent-400);
+			
+			position: absolute;
+			top: 0;
+			left: 1.5rem;
+			right: 1.5rem;
+			height: 0;
+			transition: height 200ms;
+		}
+		
+		&:hover::before {
+			height: 0.25rem;
+		}
+	}
+	
+	// deco on links in the dropdowns is a text underline
+	.branch li {
+		&::before {
+			top: calc(1rem + 1em);
+		}
+			
+		&:hover::before {
+			height: 0.125rem;
+		}
+	}
+	
+	.hidden {
+		display: none;
 	}
 </style>

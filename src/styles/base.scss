@@ -1,7 +1,7 @@
 @use "sass:color";
 
 $bg-base: hsl(0 0% 7%);
-$accent-base: #3ea8ee;
+$accent-base: #1074b6;
 
 :root {
 	color: white;
@@ -10,5 +10,13 @@ $accent-base: #3ea8ee;
 	--bg-200: #{color.adjust($bg-base, $lightness: 10%)};
 	--bg-300: #{color.adjust($bg-base, $lightness: 15%)};
 	
+	--accent-600: #{color.adjust($accent-base, $lightness: 20%)};
+	--accent-500: #{color.adjust($accent-base, $lightness: 10%)};
 	--accent-400: #{$accent-base};
+	--accent-300: #{color.adjust($accent-base, $lightness: -10%)};
+	
+	--padding-regular: .25rem 1rem;
+	--padding-large: 1rem 1.5rem;
+	
+	--radius-regular: 0.5rem;
 }

@@ -2,4 +2,7 @@
 	import HiddenHTML from "$lib/HiddenHTML.svelte";
 </script>
 
-<HiddenHTML encodedHTML="RS1tYWlsOiBrYXJsby5iaXN0cmlja2kyNTZAZ21haWwuY29t" />
+<div class="text-flow">
+	<p>Contact me:</p>
+	<HiddenHTML encodedHTML="RS1tYWlsOiBrYXJsby5iaXN0cmlja2kyNTZAZ21haWwuY29t" />
+</div>

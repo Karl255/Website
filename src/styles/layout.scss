@@ -12,7 +12,7 @@ body {
 	$accent-sides-size: 10%;
 	background-image: url(/hex-pattern.png), linear-gradient(to right, var(--accent-400), hsl(0 0% 9%) #{$accent-sides-size}, hsl(0 0% 9%) calc(100% - #{$accent-sides-size}), var(--accent-400));
 	background-blend-mode: multiply;
-	background-position: center;
+	background-position: center top;
 }
 
 body > * {
@@ -20,4 +20,9 @@ body > * {
 	
 	display: grid;
 	@include mixins.grid-template-column-subgrid;
+}
+
+body > .text-flow {
+	grid-column: 2 / -2;
+	display: block;
 }

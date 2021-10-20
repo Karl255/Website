@@ -47,11 +47,11 @@ h1, h2, h3, h4, h5, h6, p {
 		margin-top: 1rem;
 	}
 	
-	* + p {
+	* + :is(p, input, button) {
 		margin-top: .5rem;
 	}
 	
-	* + p {
+	* + :-webkit-any(p, input, button) {
 		margin-top: .5rem;
 	}
 }
@@ -64,5 +64,18 @@ a {
 	&.disabled {
 		pointer-events: none;
 		cursor: default;
+	}
+}
+
+button {
+	background-color: var(--accent-400);
+	border: none;
+	border-radius: var(--radius-regular);
+	padding: var(--padding-regular);
+	
+	transition: background-color 100ms;
+	
+	&:hover {
+		background-color: var(--accent-500);
 	}
 }
