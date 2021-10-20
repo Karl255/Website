@@ -1,22 +1,15 @@
 @use "sass:color";
-
-$bg-base: hsl(0 0% 7%);
-$accent-base: #1074b6;
+@use "imports";
 
 :root {
 	color: white;
 	
-	--bg-100: #{color.adjust($bg-base, $lightness: 5%)};
-	--bg-200: #{color.adjust($bg-base, $lightness: 10%)};
-	--bg-300: #{color.adjust($bg-base, $lightness: 15%)};
+	--bg-100: #{color.adjust(imports.$bg-base, $lightness: 5%)};
+	--bg-200: #{color.adjust(imports.$bg-base, $lightness: 10%)};
+	--bg-300: #{color.adjust(imports.$bg-base, $lightness: 15%)};
 	
-	--accent-600: #{color.adjust($accent-base, $lightness: 20%)};
-	--accent-500: #{color.adjust($accent-base, $lightness: 10%)};
-	--accent-400: #{$accent-base};
-	--accent-300: #{color.adjust($accent-base, $lightness: -10%)};
-	
-	--padding-regular: .25rem 1rem;
-	--padding-large: 1rem 1.5rem;
-	
-	--radius-regular: 0.5rem;
+	--accent-600: #{color.adjust(imports.$accent-base, $lightness: 20%)};
+	--accent-500: #{color.adjust(imports.$accent-base, $lightness: 10%)};
+	--accent-400: #{imports.$accent-base};
+	--accent-300: #{color.adjust(imports.$accent-base, $lightness: -10%)};
 }

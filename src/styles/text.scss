@@ -1,4 +1,4 @@
-@use "base";
+@use "imports";
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,400;0,700;1,400&family=Roboto+Slab:wght@400;700&display=swap');
 
 :root {
@@ -38,6 +38,10 @@ h1, h2, h3, h4, h5, h6, p {
 	margin: 0;
 }
 
+h1, h2, h3, h4, h5, h6 {
+	color: var(--accent-600);
+}
+
 .text-flow {
 	* + :is(h1, h2, h3, h4, h5, h6) {
 		margin-top: 1rem;
@@ -70,12 +74,23 @@ a {
 button {
 	background-color: var(--accent-400);
 	border: none;
-	border-radius: var(--radius-regular);
-	padding: var(--padding-regular);
+	border-radius: imports.$radius-regular;
+	padding: imports.$padding-regular;
 	
 	transition: background-color 100ms;
 	
 	&:hover {
 		background-color: var(--accent-500);
+	}
+}
+
+dl {
+	dd + dt {
+		margin-top: 1rem;
+	}
+	
+	dd {
+		display: list-item;
+		list-style-type: circle;
 	}
 }

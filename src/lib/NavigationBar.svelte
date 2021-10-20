@@ -18,20 +18,25 @@
 </nav>
 
 <style lang="scss">
+	@use "../styles/imports";
+	
 	nav {
 		background-image: linear-gradient(to bottom, black, transparent);
 		font-size: 1rem;
 		line-height: 1;
 	}
 	
-	ul {
+	nav > ul {
 		grid-column: 2 / -2;
-		
+		gap: 3rem;
+	}
+	
+	ul {
 		list-style: none;
 		margin: 0;
 		padding: 0;
 		
-		display: flex;
+		display: flex;	
 	}
 	
 	.branch {
@@ -41,7 +46,7 @@
 		
 		> ul {
 			background-color: var(--bg-100);
-			border-radius: var(--radius-regular);
+			border-radius: imports.$radius-regular;
 			
 			display: none;
 			position: absolute;
@@ -60,7 +65,12 @@
 		text-decoration: none;
 		
 		display: block;
-		padding: var(--padding-large);
+		padding: imports.$padding-large;
+		
+		nav > ul > li > & {
+			padding-left: 0;
+			padding-right: 0;
+		}
 	}
 	
 	// nav link hover deco
@@ -74,8 +84,8 @@
 			
 			position: absolute;
 			top: 0;
-			left: 1.5rem;
-			right: 1.5rem;
+			left: 0;
+			right: 0;
 			height: 0;
 			transition: height 200ms;
 		}
@@ -89,6 +99,9 @@
 	.branch li {
 		&::before {
 			top: calc(1rem + 1em);
+			// because of the 1.5rem padding
+			left: 1.5rem;
+			right: 1.5rem;
 		}
 			
 		&:hover::before {
