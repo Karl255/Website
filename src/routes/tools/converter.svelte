@@ -19,7 +19,7 @@
 	<div>
 		<h3>This is a universal encoding converter (almost)</h3>
 		<p>It has certain shortcommings: the text input isn't truly unicode, it's UTF-16 and if there's non-ASCII characters the string won't be transcoded into certain encodings (base64). Also the RegExes for input checking are no all perfect (eg. URL encoding).</p>
-		<p>You can let me know about any important bugs and issues or give suggestions in form of an issue on the GitHub repo for this website. You can find the link for it on the <a href="/about">about page</a>.</p>
+		<p>You can let me know about any important bugs and issues or give suggestions in form of an issue on the GitHub repo for this website. You can find the link for it on the <a href="#">about page</a>. NOTE: REWRITE THIS PART!!!!!</p>
 	</div>
 	<div id="input-html-dummy" class="dummy" bind:this={dummyElement}></div>
 </div>
