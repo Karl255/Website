@@ -1,0 +1,11 @@
+li.heart-marker {
+	list-style-type: none;
+	position: relative;
+	
+	&::before {
+		content: "♥";
+		position: absolute;
+		
+		right: calc(100% + 6px);
+	}
+}
