@@ -3,7 +3,7 @@
 </script>
 
 <div class="dropdown-root">
-	<a class="no-click" href=".">{title}</a>
+	<a class="no-click" href="#">{title}</a>
 	<div class="dropdown">
 		<slot></slot>
 	</div>
