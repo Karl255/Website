@@ -1,4 +1,4 @@
-$bg-base: hsl(0 0% 7%);
+$bg-base: hsl(0 0% 5%);
 $accent-base: hsl(138 54% 29%);
 
 $padding-regular: .25rem 1rem;
@@ -6,11 +6,3 @@ $padding-large: 1rem 1.5rem;
 $radius-regular: 0.5rem;
 
 $mobile-screen-size: 768px;
-
-@mixin grid-template-column-subgrid {
-	grid-template-columns: subgrid;
-	
-	@supports not (grid-template-columns: subgrid) {
-		grid-template-columns: inherit;
-	}
-}

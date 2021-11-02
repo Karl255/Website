@@ -5,7 +5,7 @@
 	color: white;
 	background-color: black; // NOTE: body sets its own background-image, this is mainly just for easy automatic dark scrollbars
 	
-	--bg-100: imports.$bg-base;
+	--bg-100: #{imports.$bg-base};
 	--bg-200: #{color.adjust(imports.$bg-base, $lightness: 5%)};
 	--bg-300: #{color.adjust(imports.$bg-base, $lightness: 10%)};
 	--bg-400: #{color.adjust(imports.$bg-base, $lightness: 15%)};

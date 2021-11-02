@@ -80,7 +80,7 @@
 		
 		&::before {
 			content: "";
-			background-color: var(--accent-400);
+			background-color: var(--accent-500);
 			
 			position: absolute;
 			top: 0;
@@ -91,7 +91,7 @@
 		}
 		
 		&:hover::before {
-			height: 0.25rem;
+			height: 0.125rem;
 		}
 	}
 	
@@ -102,10 +102,6 @@
 			// because of the 1.5rem padding
 			left: 1.5rem;
 			right: 1.5rem;
-		}
-			
-		&:hover::before {
-			height: 0.125rem;
 		}
 	}
 	
