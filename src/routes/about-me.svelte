@@ -1,5 +1,6 @@
 <script>
 	import HiddenHTML from "$lib/HiddenHTML.svelte";
+	import DisqusThread from "$lib/DisqusThread.svelte";
 </script>
 
 <section class="columns three-columns">
@@ -84,7 +85,7 @@
 		<h2><a href="https://github.com/Karl255/WeatherFetch">Weather&shy;Fetch</a></h2>
 		<p>A CLI utility for getting the current weather. I created it to learn more about how to make CLI tools, implement multi-API backends and properly use dependency injection.</p>
 	</section>
-<!-- 	
+	<!-- 	
 	<section class="text-flow">
 		<h2><a href="https://github.com/Karl255/ArduinoStaticWebServer">Arduino&shy;Static&shy;Web&shy;Server</a></h2>
 		<p>A very basic and limited static web server for Arduino. Serves pages from a FAT32 formatted SD card... slowly... very slowly...</p>
@@ -99,4 +100,6 @@
 <section class="text-flow">
 	<h1>Contact me:</h1>
 	<HiddenHTML encodedHTML="RS1tYWlsOiBrYXJsby5iaXN0cmlja2kyNTZAZ21haWwuY29t" />
+	<h1>Or send a message in this Disqus thread:</h1>
+	<DisqusThread pageIdentifier="about-me" />
 </section>
