@@ -6,7 +6,7 @@ body {
 	display: grid;
 	grid-template-columns: minmax(1rem, 1fr) minmax(0, var(--content-width)) minmax(1rem, 1fr);
 	grid-auto-rows: auto;
-	gap: 4rem 1rem;
+	gap: 2rem 0;
 	align-content: start; // to prevent grid from stretching all the rows to fill the screen (but still keeping the body's min-height of 100vh)
 	padding-bottom: 2rem; // equal to the minimum side "padding" + gap (first and last columns of the master grid)
 
@@ -20,7 +20,13 @@ body > * {
 	grid-column: 2 / -2;
 }
 
-body > section {
+main {
+	display: grid;
+	grid-template-columns: 1fr;
+	gap: 4rem;
+}
+
+main > section {
 	background-color: var(--bg-100);
 	border-radius: 1rem;
 	
@@ -28,7 +34,7 @@ body > section {
 	padding: 2rem;
 }
 
-body > .columns {
+.columns {
 	display: grid;
 	grid-template-columns: repeat(12, 1fr);
 	gap: 2rem;
@@ -101,10 +107,10 @@ body > .columns {
 	}
 }
 
-body > .two-columns {
+.two-columns {
 	--column-count: 2;
 }
 
-body > .three-columns {
+.three-columns {
 	--column-count: 3;
 }
