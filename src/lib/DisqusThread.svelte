@@ -24,6 +24,6 @@
 <style lang="scss" global>
 	* + #disqus_thread {
 		margin-top: 1rem;
-		margin-bottom: -2.5rem;
+		margin-bottom: -1rem;
 	}
 </style>
