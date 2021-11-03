@@ -14,7 +14,3 @@
 {:else}
 	<button on:click={handleShowContent}>Show hidden content</button>
 {/if}
-
-<style>
-	
-</style>

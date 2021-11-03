@@ -1,60 +1,17 @@
+@use "sass:color";
+@use "imports";
+
 :root {
-	--color-neutral-light-100: #ffffff;
-	--color-neutral-light-200: #efefef;
-	--color-neutral-light-300: #dfdfdf;
-	--color-neutral-light-500: #bfbfbf;
-	--color-neutral-light-600: #afafaf;
+	color: white;
+	background-color: black; // NOTE: body sets its own background-image, this is mainly just for easy automatic dark scrollbars
 	
-	--color-neutral-dark-650: #3f3f3f;
-	--color-neutral-dark-700: #303030;
-	--color-neutral-dark-750: #282828;
-	--color-neutral-dark-800: #202020;
-	--color-neutral-dark-850: #181818;
+	--bg-100: #{imports.$bg-base};
+	--bg-200: #{color.adjust(imports.$bg-base, $lightness: 4%)};
+	--bg-300: #{color.adjust(imports.$bg-base, $lightness: 7%)};
+	--bg-400: #{color.adjust(imports.$bg-base, $lightness: 10%)};
 	
-	--color-accent-300: #b83939;
-	--color-accent-400: #d34141;
-}
-
-// default to dark theme, being before the media queries is important
-@supports not (prefers-color-scheme: dark) {
-	:root {
-		color: white;
-		
-		--color-ui-layer-1: var(--color-neutral-dark-850);
-		--color-ui-layer-2: var(--color-neutral-dark-800);
-		--color-ui-layer-3: var(--color-neutral-dark-750);
-		--color-ui-layer-4: var(--color-neutral-dark-700);
-		--color-border: var(--color-neutral-dark-700);
-		--color-border-focus: var(--color-neutral-dark-650);
-		--color-shadow: #040404;
-	}
-}
-
-@media (prefers-color-scheme: dark) {
-	:root {
-		color: white;
-		
-		--color-ui-layer-1: var(--color-neutral-dark-850);
-		--color-ui-layer-2: var(--color-neutral-dark-800);
-		--color-ui-layer-3: var(--color-neutral-dark-750);
-		--color-ui-layer-4: var(--color-neutral-dark-700);
-		--color-border: var(--color-neutral-dark-700);
-		--color-border-focus: var(--color-neutral-dark-650);
-		--color-shadow: #040404;
-	}
-}
-
-@media (prefers-color-scheme: light) {
-	:root {
-		color: black;
-		
-		--color-ui-layer-1: var(--color-neutral-light-300);
-		--color-ui-layer-2: var(--color-neutral-light-200);
-		--color-ui-layer-3: var(--color-neutral-light-100);
-		--color-ui-layer-4: var(--color-neutral-light-200);
-		
-		--color-border: var(--color-neutral-light-500);
-		--color-border-focus: var(--color-neutral-light-600);
-		--color-shadow: #999;
-	}
+	--accent-600: #{color.adjust(imports.$accent-base, $lightness: 20%)};
+	--accent-500: #{color.adjust(imports.$accent-base, $lightness: 10%)};
+	--accent-400: #{imports.$accent-base};
+	--accent-300: #{color.adjust(imports.$accent-base, $lightness: -10%)};
 }

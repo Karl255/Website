@@ -22,14 +22,20 @@
 	}
 </script>
 
-<section>
-	<h3>{@html title}</h3>
-	<textarea rows=5 on:input={handleInput} bind:value={value}></textarea>
+<section class="text-flow">
+	<h1>{@html title}</h1>
+	<code>
+		<textarea rows=8 on:input={handleInput} bind:value={value} autocapitalize="none" autocomplete="off" autocorrect="off" spellcheck="false"></textarea>
+	</code>
 </section>
 
-<style>
+<style lang="scss">
+	code {
+		display: block;
+	}
+	
 	textarea {
-		font-family: monospace;
+		width: 100%;
 		resize: none;
 	}
 </style>

@@ -1,25 +1,53 @@
-<script>
-	// page title store which is read by the layout
-	import { pageTitle } from "$lib/pageStores.js";
-	
-	const title = "Home";
-	pageTitle.set(title);
-</script>
+<svelte:head>
+	<title>Karlo Bistrički - Personal website</title>
+</svelte:head>
 
-<div class="columns-7-3">
-	<div class="vertical-flow">
-		<!-- main page content -->
-		<section>
-			<h1>Home page</h1>
-			<p>This is the home page of my revamped personal website. It's still WIP.</p>
-		</section>
-	</div>
-	
-	<aside class="vertical-flow">
-		<!-- side content, such as navigations of some kind -->
-		<section>
-			<h3>Feedback</h3>
-			<p>I would appreciate any feedback, criticism and especially ideas for new content. My (hopefully) up-to-date contact info is on the <a href="/about">About & Contact page</a>.</p>
-		</section>
-	</aside>
+<div class="hero">
+	<h1>Hi, I'm Karlo.</h1>
+	<p>I am a student who primarily does software development, but I also do design and occasionally work with electronics.</p>
+	<a href="/about-me">Learn about me</a>
+	<img class="hidden">
 </div>
+
+<style lang="scss">
+	.hero {
+		grid-column: content-start / content-end;
+		gap: 1rem;
+		font-size: 1.25rem; // 20px
+		
+		h1 {
+			grid-column: 1 / 5;
+			grid-row: 1;
+		}
+		
+		p {
+			grid-column: 1 / 4;
+			grid-row: 2;
+			
+		}
+		
+		a {
+			grid-column: 1 / 4;
+			grid-row: 3;
+		}
+		
+		img {
+			grid-column: 4 / 7;
+			grid-row: 1 / span 4;
+		}
+		
+		@media (max-width: 768px) {
+			h1, p, a, img {
+				grid-column: 1 / -1;
+			}
+			
+			img {
+				grid-row: 4;
+			}
+		}
+	}
+	
+	img.hidden {
+		display: none;
+	}
+</style>

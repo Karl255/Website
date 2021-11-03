@@ -1,117 +1,121 @@
+@use "imports";
+
 body {
-	background-color: var(--color-ui-layer-2);
-	display: grid;
-	grid-template-columns: [page-start] 1fr [main-start] min(1200px, 100vw) [main-end] 1fr [page-end];
-	grid-template-rows: auto 1fr auto;
-}
-
-.subcontainer-main {
-	grid-column: main-start / main-end;
-}
-
-.flex-row-justify-self-end {
-	margin-left: auto;
-}
-
-.vertical-flow {
-	display: flex;
-	flex-flow: column nowrap;
-	gap: 16px;
-}
-
-.dummy {
-	display: none;
-}
-
-header {
-	background-color: var(--color-ui-layer-1);
-	border-bottom: 1px solid var(--color-border);
-
-	display: grid;
-	grid-column: page-start / page-end;
-	grid-template-columns: inherit;
+	--master-column-count: 6;
+	--content-width: 70rem;
 	
-	> * {
-		display: flex;
-		padding: 16px;
-		gap: 32px;
-		--cross-align-each-item: center;
-		--main-align-content: space-between;
+	display: grid;
+	grid-template-columns: minmax(1rem, 1fr) [content-wide-start] 1fr [content-start] minmax(0, var(--content-width)) [content-end] 1fr [content-wide-end] minmax(1rem, 1fr);
+	grid-auto-rows: auto;
+	
+	gap: 2rem 0;
+	align-content: start; // to prevent grid from stretching all the rows to fill the screen (but still keeping the body's min-height of 100vh)
+	padding-bottom: 2rem; // equal to the minimum side "padding" + gap (first and last columns of the master grid)
+
+	$accent-sides-size: 10%;
+	background-image: url(/background-pattern.png), linear-gradient(to right, var(--accent-400), hsl(0 0% 9%) #{$accent-sides-size}, hsl(0 0% 9%) calc(100% - #{$accent-sides-size}), var(--accent-400));
+	background-blend-mode: multiply;
+	background-attachment: fixed;
+}
+
+body > * {
+	grid-column: content-start / content-end;
+}
+
+// standard main
+
+main.standard {
+	display: grid;
+	grid-template-columns: 1fr;
+	gap: 4rem;
+}
+
+main > section,
+main > .wrapper > section {
+	background-color: var(--bg-100);
+	border-radius: 1rem;
+	
+	box-shadow: 0 0 1rem black;
+	padding: 2rem;
+}
+
+.columns {
+	display: grid;
+	grid-template-columns: repeat(12, 1fr);
+	gap: 2rem;
+	margin-top: 4rem;
+	
+	position: relative;
+	
+	text-align: center;
+	
+	ul {
+		text-align: left;
+	}
+	
+	h1 {
+		grid-column: 1 / -1;
 		
-		> ul {
-			display: flex;
+		position: absolute;
+		bottom: calc(100% + 2rem);
+		left: 50%;
+		transform: translateX(-50%);
+		
+		&::before {
+			content: "";
+			background-color: currentColor;
+			
+			position: absolute;
+			width: 6rem;
+			height: .25rem;
+			top: calc(100% + .5rem);
+			left: 50%;
+			transform: translateX(-50%);
+			
+			border-radius: .125rem;
 		}
 	}
 	
-	ul {
-		list-style: none;
-		padding: 0;
+	// desktop only, smart placement for the last row of columns
+	@media screen and (min-width: imports.$mobile-screen-size) {
+		&.two-columns > section {
+			grid-column: span 6;
+		}
+		
+		&.two-columns > section:nth-of-type(2n - 1):last-child {
+			grid-column: 4 / span 6;
+		}
+		
+		&.three-columns > section {
+			grid-column: span 4;
+		}
+		
+		&.three-columns > section:nth-of-type(3n - 2):last-child {
+			grid-column: 5 / span 4;
+		}
+		
+		&.three-columns > section:nth-of-type(3n - 2):nth-last-of-type(2) {
+			grid-column: 3 / span 4;
+		}
+
+		&.three-columns > section:nth-of-type(3n - 1):nth-last-of-type(1) {
+			grid-column: 7 / span 4;
+		}
 	}
 	
-	a {
-		display: block;
-		padding: 4px 12px;
+	// mobile only
+	@media screen and (max-width: imports.$mobile-screen-size) {
+		> * {
+			grid-column: 1 / -1;
+		}
+		
 	}
 }
 
-
-main {
-	grid-column: main-start / main-end;
-	padding: 16px;
-	display: flex;
-	flex-direction: column;
-	place-items: start;
+.two-columns {
+	--column-count: 2;
 }
 
-.columns-7-3 {
-	display: grid;
-	grid-template-columns: 7fr 3fr;
-	gap: 32px;
-	
-	/* mobile layout */
-	@media screen and (max-width: 720px) {
-		grid-template-columns: 1fr;
-	}
-}
-
-.cards {
-	display: flex;
-	flex-wrap: wrap;
-	--cross-align-content: start;
-	gap: 32px;
-	
-	> * {
-		flex-basis: 280px;
-		flex-grow: 1;
-	}
-}
-
-.blog-post {
-	width: min(100%, 60ch);
-	align-self: center;
-}
-
-section {
-	background-color: var(--color-ui-layer-3);
-	border: 1px solid var(--color-border);
-	border-radius: 8px;
-	padding: 16px;
-}
-
-footer {
-	font-size: 12px;
-	border-top: 1px solid var(--color-border);
-
-	background-color: var(--color-ui-layer-1);
-	grid-column: page-start / page-end;
-	grid-row: -2 / -1;
-
-	display: flex;
-	--main-align-content: center;
-	gap: 8px;
-	padding: 8px;
-}
-
-#disqus_thread {
-	margin-top: 32px;
+.three-columns {
+	--column-count: 3;
 }

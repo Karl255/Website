@@ -1,10 +1,4 @@
 <script>
-	// page title store which is read by the layout
-	import { pageTitle } from "$lib/pageStores.js";
-	
-	const title = "Converter";
-	pageTitle.set(title);
-	
 	import { onMount } from "svelte";
 	import ConverterTextbox from "$lib/ConverterTextbox.svelte"
 	import converter from "$lib/converter.js";
@@ -18,20 +12,50 @@
 	});
 </script>
 
-<div class="cards">
-	{#each converter.formats as format}
+<main>
+	<div class="wrapper flexible-cards">
+		{#each converter.formats as format}
 		<ConverterTextbox byteStream={converter.byteStream} decoder={format.decode} encoder={format.encode} title={format.name} />
-	{/each}
-	<section class="full-width">
-		<h3>This is a universal encoding converter (almost)</h3>
-		<p>It has certain shortcommings: the text input isn't truly unicode, it's UTF-16 and if there's non-ASCII characters the string won't be transcoded into certain encodings (base64). Also the RegExes for input checking are no all perfect (eg. URL encoding).</p>
-		<p>You can let me know about any important bugs and issues or give suggestions in form of an issue on the GitHub repo for this website. You can find the link for it on the <a href="/about">about page</a>.</p>
+		{/each}
+	</div>
+		
+	<section class="text-flow full-width">
+		<h1>This is a universal encoder-decoder</h1>
+		<p>It converts between several encodings at once, right as you type. Currently the converter doesn't work perfectly with Unicode.</p>
+		<p>If you have any suggestions, create an issue on <a href="https://github.com/Karl255/Website/">this website's GitHub repo</a>.</p>
 	</section>
-	<div id="input-html-dummy" class="dummy" bind:this={dummyElement}></div>
-</div>
-
-<style>
+	<div id="input-html-dummy" class="hidden" bind:this={dummyElement}></div>
+</main>
+	
+<style lang="scss">
+	main {
+		grid-column: content-wide-start / content-wide-end;
+		
+		display: grid;
+		gap: 2rem;
+		
+	}
+	
+	.flexible-cards {
+		display: flex;
+		flex-flow: row wrap;
+		gap: 2rem;
+		
+		> :global(*) {
+			flex-basis: 400px;
+			flex-grow: 1;
+			padding: 1rem;
+		}
+	}
+	
+	:global(h1) {
+		font-size: 1.5rem;
+	}
+	
 	.full-width {
-		min-width: 100%;
+	}
+	
+	.hidden {
+		display: none;
 	}
 </style>
