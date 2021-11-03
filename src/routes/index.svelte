@@ -11,7 +11,7 @@
 
 <style lang="scss">
 	.hero {
-		grid-column: 2 / -2;
+		grid-column: content-start / content-end;
 		gap: 1rem;
 		font-size: 1.25rem; // 20px
 		
