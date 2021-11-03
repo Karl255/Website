@@ -61,11 +61,11 @@ h1, h2, h3, h4, h5, h6 {
 		margin-top: 2rem;
 	}
 	
-	* + :is(p, ul, input, button) {
+	* + :is(p, ul, input, button, textarea, code) {
 		margin: 1rem 0 0 0;
 	}
 	
-	* + :-webkit-any(p, ul, input, button) {
+	* + :-webkit-any(p, ul, input, button, textarea, code) {
 		margin: 1rem 0 0 0;
 	}
 }
@@ -73,6 +73,13 @@ h1, h2, h3, h4, h5, h6 {
 a {
 	body > :not(nav) & {
 		color: var(--accent-600);
+		
+		text-decoration: none;
+		
+		&:hover,
+		&:focus {
+			text-decoration: 1px solid underline currentColor;
+		}
 	}
 	
 	&.disabled {
@@ -102,5 +109,26 @@ dl {
 	dd {
 		display: list-item;
 		list-style-type: circle;
+	}
+}
+
+code {
+	font-family: "Consolas", monospace;
+	line-height: 1.25;
+}
+
+textarea {
+	background-color: var(--bg-200);
+	border: none;
+	border-radius: .5rem;
+	
+	margin: 0;
+	padding: .5rem;
+	
+	transition: background-color 100ms;
+	
+	&:focus {
+		outline: none;
+		background-color: var(--bg-300);
 	}
 }

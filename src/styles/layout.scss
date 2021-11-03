@@ -4,7 +4,7 @@ body {
 	--master-column-count: 6;
 	--content-width: 70rem;
 	display: grid;
-	grid-template-columns: minmax(1rem, 1fr) minmax(0, var(--content-width)) minmax(1rem, 1fr);
+	grid-template-columns: minmax(1rem, 1fr) [content-wide-start] 1fr [content-start] minmax(0, var(--content-width)) [content-end] 1fr [content-wide-end] minmax(1rem, 1fr);
 	grid-auto-rows: auto;
 	gap: 2rem 0;
 	align-content: start; // to prevent grid from stretching all the rows to fill the screen (but still keeping the body's min-height of 100vh)
@@ -17,16 +17,19 @@ body {
 }
 
 body > * {
-	grid-column: 2 / -2;
+	grid-column: content-start / content-end;
 }
 
-main {
+// standard main
+
+main.standard {
 	display: grid;
 	grid-template-columns: 1fr;
 	gap: 4rem;
 }
 
-main > section {
+main > section,
+main > .wrapper > section {
 	background-color: var(--bg-100);
 	border-radius: 1rem;
 	
