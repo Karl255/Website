@@ -53,11 +53,12 @@
 		</section>
 	
 		<section class="text-flow">
-			<h2>Platforms and such</h2>
+			<h2>Platforms, frameworks etc.</h2>
 			<ul>
 				<li>The web</li>
 				<li>Cross-platform CLI tools</li>
 				<li>Desktop GUI apps (only for Windows; awaiting MAUI)</li>
+				<li class="heart-marker">Svelte and SvelteKit</li>
 				<li>PlatformIO, Arduino</li>
 				<li>MonoGame</li>
 			</ul>
