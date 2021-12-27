@@ -30,25 +30,10 @@
 			<h2>Languages</h2>
 			<ul>
 				<li>C# &minus; currently my main go-to language</li>
-				<li>JavaScript</li>
-				<li>Lua</li>
-				<li>C</li>
-			</ul>
-			<ul>
-				<li>CSS</li>
-				<li>SCSS/Sass</li>
-				<li>Less</li>
-			</ul>
-		</section>
-	
-		<section class="text-flow">
-			<h2>Tooling</h2>
-			<ul>
-				<li>Visual Studio</li>
-				<li>VS Code (and forks)</li>
-				<li class="heart-marker">WSL</li>
-				<li>git</li>
-				<li>keyboard, occasionally also a mouse</li>
+				<li>JavaScript &minus; for the web</li>
+				<li>Lua &minus; in apps that embed it</li>
+				<li>C &minus; embedded development</li>
+				<li>CSS, SCSS/Sass, Less &minus; to make the web pretty</li>
 			</ul>
 		</section>
 	
@@ -61,6 +46,17 @@
 				<li class="heart-marker">Svelte and SvelteKit</li>
 				<li>PlatformIO, Arduino</li>
 				<li>MonoGame</li>
+			</ul>
+		</section>
+	
+		<section class="text-flow">
+			<h2>Tooling</h2>
+			<ul>
+				<li>Visual Studio</li>
+				<li>VS Code (and forks)</li>
+				<li class="heart-marker">WSL</li>
+				<li>git</li>
+				<li>keyboard, occasionally also a mouse</li>
 			</ul>
 		</section>
 	</section>
