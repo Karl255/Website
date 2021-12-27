@@ -2,48 +2,57 @@
 	<title>Karlo Bistrički - Personal website</title>
 </svelte:head>
 
-<div class="hero">
-	<h1>Hi, I'm Karlo.</h1>
-	<p>I am a student who primarily does software development, but I also do design and occasionally work with electronics.</p>
-	<a href="/about-me">Learn about me</a>
-	<img class="hidden">
-</div>
+<main>
+	<div class="glass hero">
+		<h1>Hi, I'm Karlo.</h1>
+		<p>I am a student who primarily does software development, but I also do some design and occasionally work with electronics.</p>
+		<a href="/about-me">Learn about me</a>
+		<img src="/profile.jpg">
+	</div>
+</main>
 
 <style lang="scss">
 	.hero {
 		grid-column: content-start / content-end;
+		display: grid;
+		grid-template-areas:
+			".           profile"
+			"title       profile"
+			"description profile"
+			"link        profile"
+			".           profile";
+		
 		gap: 1rem;
 		font-size: 1.25rem; // 20px
 		
 		h1 {
-			grid-column: 1 / 5;
-			grid-row: 1;
+			grid-area: title;
 		}
 		
 		p {
-			grid-column: 1 / 4;
-			grid-row: 2;
-			
+			grid-area: description;
 		}
 		
 		a {
-			grid-column: 1 / 4;
-			grid-row: 3;
+			grid-area: link;
 		}
 		
 		img {
-			grid-column: 4 / 7;
-			grid-row: 1 / span 4;
+			grid-area: profile;
+			place-self: center;
+			
+			width: 240px;
+			aspect-ratio: 1;
+			border: 3px solid var(--bg-200);
+			border-radius: 50%;
 		}
 		
 		@media (max-width: 768px) {
-			h1, p, a, img {
-				grid-column: 1 / -1;
-			}
-			
-			img {
-				grid-row: 4;
-			}
+			grid-template-areas:
+				"profile"
+				"title"
+				"description"
+				"link";
 		}
 	}
 	

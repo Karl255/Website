@@ -20,7 +20,7 @@ function decodeText(input) {
 
 function encodeText(stream) {
 	if (typeof stream !== "object")
-		return "";
+		return false;
 
 	return String.fromCharCode(...stream);
 }
@@ -37,7 +37,7 @@ function decodeUrl(input) {
 
 function encodeUrl(stream) {
 	if (typeof stream !== "object")
-		return "";
+		return false;
 
 	return encodeURIComponent(String.fromCharCode(...stream));
 }
@@ -58,7 +58,7 @@ function decodeHtml(input) {
 
 function encodeHtml(stream) {
 	if (typeof stream !== "object")
-		return "";
+		return false;
 
 	if (htmlEncodingDummy.element === null)
 		return false;
@@ -92,7 +92,7 @@ function decodeHex(input) {
 
 function encodeHex(stream) {
 	if (typeof stream !== "object")
-		return "";
+		return false;
 
 	return stream
 		.map(x => ("00" + x.toString(16)).slice(-2))
@@ -124,7 +124,7 @@ function decodeBinary(input) {
 
 function encodeBinary(stream) {
 	if (typeof stream !== "object")
-		return "";
+		return false;
 
 	return stream
 		.map(x => ("00000000" + x.toString(2)).slice(-8))
@@ -153,7 +153,7 @@ function decodeDecimal(input) {
 
 function encodeDecimal(stream) {
 	if (typeof stream !== "object")
-		return "";
+		return false;
 
 	return stream
 		.map(x => x.toString())
@@ -182,7 +182,7 @@ function decodeBase64(input) {
 
 function encodeBase64(stream) {
 	if (typeof stream !== "object")
-		return "";
+		return false;
 
 	if (typeof btoa !== "function")
 		return false;
@@ -199,7 +199,7 @@ function decodeRot13(text) {
 	if (typeof text !== "string")
 		return false;
 
-	return stringToStream(input, charCodeRot13);
+	return stringToStream(text, charCodeRot13);
 }
 
 function encodeRot13(stream) {
@@ -246,6 +246,11 @@ let formats = [
 		encode: encodeHtml
 	},
 	{
+		name: "ROT13",
+		decode: decodeRot13,
+		encode: encodeRot13
+	},
+	{
 		name: "Hexadecimal<sub>(16)</sub>",
 		decode: decodeHex,
 		encode: encodeHex
@@ -264,11 +269,6 @@ let formats = [
 		name: "Base64<sub>(64)</sub>",
 		decode: decodeBase64,
 		encode: encodeBase64
-	},
-	{
-		name: "ROT13",
-		decode: decodeRot13,
-		encode: encodeRot13
 	},
 ];
 

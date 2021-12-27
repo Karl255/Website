@@ -6,9 +6,20 @@
 	background-color: black; // NOTE: body sets its own background-image, this is mainly just for easy automatic dark scrollbars
 	
 	--bg-100: #{imports.$bg-base};
-	--bg-200: #{color.adjust(imports.$bg-base, $lightness: 4%)};
-	--bg-300: #{color.adjust(imports.$bg-base, $lightness: 7%)};
-	--bg-400: #{color.adjust(imports.$bg-base, $lightness: 10%)};
+	--bg-200: #{color.adjust(imports.$bg-base, $lightness: 5%)};
+	--bg-300: #{color.adjust(imports.$bg-base, $lightness: 8%)};
+	--bg-400: #{color.adjust(imports.$bg-base, $lightness: 11%)};
+	
+	--glass-100: #{color.adjust(imports.$bg-base, $alpha: -0.5)};
+	--glass-200: #{color.adjust(imports.$bg-base, $lightness: 8%, $alpha: -0.5)};
+	--glass-300: #{color.adjust(imports.$bg-base, $lightness: 8%, $alpha: -0.5)};
+	--glass-400: #{color.adjust(imports.$bg-base, $lightness: 11%, $alpha: -0.5)};
+	
+	--border-100: #{color.adjust(imports.$bg-base, $lightness: 5%)};
+	--border-200: #{color.adjust(imports.$bg-base, $lightness: 8%)};
+	--border-300: #{color.adjust(imports.$bg-base, $lightness: 11%)};
+	--border-400: #{color.adjust(imports.$bg-base, $lightness: 14%)};
+	
 	
 	--accent-600: #{color.adjust(imports.$accent-base, $lightness: 20%)};
 	--accent-500: #{color.adjust(imports.$accent-base, $lightness: 10%)};
