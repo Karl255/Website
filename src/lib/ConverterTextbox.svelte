@@ -9,16 +9,18 @@
 		if (typeof encoder === "function") {
 			let str = encoder(stream)
 			
-			if (str)
+			if (typeof(str) === "string") {
 				value = str;
+			}
 		}
 	});
 	
 	function handleInput(event) {
 		let stream = decoder(event.srcElement.value);
 		
-		if (stream) 
+		if (typeof(stream) == "object") {
 			byteStream.set(stream);
+		}
 	}
 </script>
 
