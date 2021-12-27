@@ -24,19 +24,22 @@
 	}
 </script>
 
-<section class="text-flow">
+<section class="panel">
 	<h1>{@html title}</h1>
-	<code>
-		<textarea rows=8 on:input={handleInput} bind:value={value} autocapitalize="none" autocomplete="off" autocorrect="off" spellcheck="false"></textarea>
-	</code>
+	<textarea class="panel-content code" rows=8 on:input={handleInput} bind:value={value} autocapitalize="none" autocomplete="off" autocorrect="off" spellcheck="false"></textarea>
 </section>
 
 <style lang="scss">
-	code {
-		display: block;
+	.card {
+		padding: .5rem 0 0 0;
+		
+		h1 {
+			text-align: center;
+		}
 	}
 	
 	textarea {
+		display: block;
 		width: 100%;
 		resize: none;
 	}

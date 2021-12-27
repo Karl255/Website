@@ -21,13 +21,17 @@
 	@use "../styles/imports";
 	
 	nav {
+		display: grid;
+		grid-template-columns: inherit;
+		
 		background-image: linear-gradient(to bottom, black, transparent);
 		font-size: 1rem;
 		line-height: 1;
+		z-index: 10;
 	}
 	
 	nav > ul {
-		grid-column: 2 / -2;
+		grid-column: content-start / content-end;
 		gap: 3rem;
 	}
 	
@@ -48,15 +52,32 @@
 			background-color: var(--bg-100);
 			border-radius: imports.$radius-regular;
 			
-			display: none;
+			display: block;
 			position: absolute;
 			top: 100%;
 			
 			white-space: nowrap;
+			opacity: 0;
+			visibility: hidden;
+			transition:
+				opacity 100ms,
+				visibility 100ms;
 		}
 		
 		&:hover > ul {
 			display: block;
+			opacity: 1;
+			visibility: visible;
+		}
+		
+		&::after {
+			content: "🢓";
+			position: absolute;
+			font-size: 1.25rem;
+			
+			top: calc(100% - 11px);
+			left: 50%;
+			transform: translateX(-50%);
 		}
 	}
 	
@@ -98,7 +119,7 @@
 	// deco on links in the dropdowns is a text underline
 	.branch li {
 		&::before {
-			top: calc(1rem + 1em);
+			top: calc(1rem + 1.25em);
 			// because of the 1.5rem padding
 			left: 1.5rem;
 			right: 1.5rem;

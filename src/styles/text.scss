@@ -92,7 +92,7 @@ button {
 	background-color: var(--accent-400);
 	border: none;
 	border-radius: imports.$radius-regular;
-	padding: imports.$padding-regular;
+	padding: .25rem 1rem;
 	
 	transition: background-color 100ms;
 	
@@ -112,7 +112,8 @@ dl {
 	}
 }
 
-code {
+code,
+.code {
 	font-family: "Consolas", monospace;
 	line-height: 1.25;
 }
@@ -131,4 +132,9 @@ textarea {
 		outline: none;
 		background-color: var(--bg-300);
 	}
+}
+
+sub, sup {
+	font-size: 0.75em;
+	line-height: 0;
 }

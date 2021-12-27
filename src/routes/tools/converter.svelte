@@ -13,17 +13,21 @@
 </script>
 
 <main>
-	<div class="wrapper flexible-cards">
+	<div class="flexible-cards">
 		{#each converter.formats as format}
 		<ConverterTextbox byteStream={converter.byteStream} decoder={format.decode} encoder={format.encode} title={format.name} />
 		{/each}
 	</div>
 		
-	<section class="text-flow full-width">
-		<h1>This is a universal encoder-decoder</h1>
-		<p>It converts between several encodings at once, right as you type. Currently the converter doesn't work perfectly with Unicode.</p>
-		<p>If you have any suggestions, create an issue on <a href="https://github.com/Karl255/Website/">this website's GitHub repo</a>.</p>
+	<section class="panel">
+		<h1>Universal encoder-decoder</h1>
+		
+		<div class="panel-content">
+			<p>This tool converts between several encodings at once, right as you type. Currently the converter doesn't work perfectly with Unicode.</p>
+			<p>If you have any suggestions, create an issue on <a href="https://github.com/Karl255/Website/">this website's GitHub repo</a>.</p>
+		</div>
 	</section>
+	
 	<div id="input-html-dummy" class="hidden" bind:this={dummyElement}></div>
 </main>
 	
@@ -33,7 +37,6 @@
 		
 		display: grid;
 		gap: 2rem;
-		
 	}
 	
 	.flexible-cards {
@@ -44,15 +47,16 @@
 		> :global(*) {
 			flex-basis: 400px;
 			flex-grow: 1;
-			padding: 1rem;
+			
+			// more real estate on 2560x1440 screens
+			@media screen and (min-width: 2100px) {
+				flex-basis: 500px;
+			}
 		}
 	}
 	
 	:global(h1) {
 		font-size: 1.5rem;
-	}
-	
-	.full-width {
 	}
 	
 	.hidden {

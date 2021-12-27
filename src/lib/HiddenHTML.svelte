@@ -12,5 +12,5 @@
 {#if showing}
 	<p>{@html decodedHTML}</p>
 {:else}
-	<button on:click={handleShowContent}>Show hidden content</button>
+	<button on:click={handleShowContent}>Click to reveal</button>
 {/if}

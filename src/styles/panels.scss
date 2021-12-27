@@ -1,0 +1,41 @@
+@use "imports";
+
+.panel {
+	background-color: var(--glass-100);
+	border: 1px solid var(--border-100);
+	border-radius: imports.$radius-regular;
+
+	> h1,
+	> h2,
+	> h3,
+	.panel-header h1,
+	.panel-header h2,
+	.panel-header h3 {
+		padding: 0.5rem 1rem;
+	}
+
+	.panel-content {
+		background-color: var(--bg-100);
+
+		padding: 1rem;
+		border-radius: imports.$radius-regular;
+	}
+
+	h1,
+	h2,
+	h3,
+	.panel-header {
+		+ .panel-content {
+			border-top-left-radius: 0;
+			border-top-right-radius: 0;
+		}
+	}
+}
+
+.glass {
+	background-color: var(--glass-100);
+	border: 1px solid var(--border-100);
+
+	border-radius: imports.$radius-regular;
+	padding: 1rem;
+}
