@@ -11,9 +11,11 @@
 		
 		if (browser) {
 			// DON'T EDIT BELOW THIS LINE
-			let d = document, s = d.createElement('script');
+			// no :)
+			let d = document, s = d.createElement("script");
 			s.src = 'https://karl255-website.disqus.com/embed.js';
-			s.setAttribute('data-timestamp', +new Date());
+			s.setAttribute("data-timestamp", +new Date());
+			s.setAttribute("defer", "");
 			(d.head || d.body).appendChild(s);
 		}
 	}

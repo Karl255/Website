@@ -71,11 +71,13 @@
 		}
 		
 		&::after {
-			content: "🢓";
+			content: "";
 			position: absolute;
-			font-size: 1.25rem;
+			border-top: 4px solid currentColor;
+			border-left: 4px solid transparent;
+			border-right: 4px solid transparent;
 			
-			top: calc(100% - 11px);
+			top: calc(100% - 10px);
 			left: 50%;
 			transform: translateX(-50%);
 		}

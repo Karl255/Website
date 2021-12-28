@@ -10,6 +10,7 @@ body {
 	gap: 2rem 0;
 	align-content: start; // to prevent grid from stretching all the rows to fill the screen (but still keeping the body's min-height of 100vh)
 	padding-bottom: 2rem; // equal to the minimum side "padding" + gap (first and last columns of the master grid)
+	overflow-x: hidden;
 
 	$accent-sides-size: 15%;
 	background-image: url(/background-pattern.png), linear-gradient(to right, var(--accent-400), hsl(0 0% 11%) #{$accent-sides-size}, hsl(0 0% 11%) calc(100% - #{$accent-sides-size}), var(--accent-400));
@@ -31,7 +32,8 @@ main {
 .columns {
 	display: grid;
 	grid-template-columns: repeat(12, 1fr);
-	gap: 2rem;
+	gap: 1.5rem;
+	justify-content: center; // on very very very small screens this makes things break *nicer*
 	
 	position: relative;
 	
