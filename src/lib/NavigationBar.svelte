@@ -3,13 +3,13 @@
 		<li><a href="/">Home page</a></li>
 		<li><a href="/about-me">About me</a></li>
 		<li class="branch">
-			<a href="#" class="disabled">Tools</a>
+			<a class="disabled" aria-disabled="true">Tools</a>
 			<ul>
 				<li><a href="/tools/converter">Universal converter</a></li>
 			</ul>
 		</li>
 		<li class="branch hidden">
-			<a href="#" class="disabled">Blog</a>
+			<a class="disabled" aria-disabled="true">Blog</a>
 			<ul>
 				<li><a href="/blog/test-post">Test post</a></li>
 			</ul>

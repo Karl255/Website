@@ -7,7 +7,7 @@
 		<h1>Hi, I'm Karlo.</h1>
 		<p>I am a student who primarily does software development, but I also do some design and occasionally work with electronics.</p>
 		<a href="/about-me">Learn about me</a>
-		<img src="/profile.jpg">
+		<img src="/profile.jpg" alt="Profile picture">
 	</div>
 </main>
 
@@ -54,9 +54,5 @@
 				"description"
 				"link";
 		}
-	}
-	
-	img.hidden {
-		display: none;
 	}
 </style>

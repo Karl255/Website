@@ -30,16 +30,7 @@
 </section>
 
 <style lang="scss">
-	.card {
-		padding: .5rem 0 0 0;
-		
-		h1 {
-			text-align: center;
-		}
-	}
-	
 	textarea {
-		display: block;
 		width: 100%;
 		resize: none;
 	}

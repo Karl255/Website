@@ -119,6 +119,8 @@ code,
 }
 
 textarea {
+	display: block;
+	
 	background-color: var(--bg-200);
 	border: none;
 	border-radius: .5rem;
