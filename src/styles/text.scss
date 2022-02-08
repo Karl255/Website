@@ -1,5 +1,5 @@
 @use "imports";
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,400;0,700;1,400&family=Roboto+Slab:wght@400;700&display=swap');
+@use "fonts";
 
 :root {
 	font-family: "Montserrat", sans-serif;
@@ -43,13 +43,21 @@ h1, h2, h3, h4, h5, h6, p {
 }
 
 h1, h2, h3, h4, h5, h6 {
-	font-family: "Roboto Slab";
+	font-family: "Roboto Slab", serif;
 	color: var(--accent-600);
 	line-height: 1.25;
 	
 	a {
 		color: inherit !important;
 	}
+}
+
+h1 {
+	font-weight: 700;
+}
+
+h2, h3, h4, h5, h6 {
+	font-weight: 400;
 }
 
 .text-flow {
