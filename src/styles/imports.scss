@@ -5,4 +5,6 @@ $padding-regular: .5rem;
 $padding-large: 1rem;
 $radius-regular: 0.5rem;
 
-$mobile-screen-size: 768px;
+$mobile-screen-size: 769px; // this resolution (most likely) doesn't exist so using both min-width and max-width shouldn't be a problem
+$mobile-only:  #{"screen and (max-width: #{$mobile-screen-size})"};
+$desktop-only: #{"screen and (min-width: #{$mobile-screen-size})"};

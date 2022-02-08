@@ -1,20 +1,24 @@
-<nav>
-	<ul>
-		<li><a href="/">Home page</a></li>
-		<li><a href="/about-me">About me</a></li>
-		<li class="branch">
-			<a class="disabled" aria-disabled="true">Tools</a>
-			<ul>
-				<li><a href="/tools/converter">Universal converter</a></li>
-			</ul>
-		</li>
-		<li class="branch hidden">
-			<a class="disabled" aria-disabled="true">Blog</a>
-			<ul>
-				<li><a href="/blog/test-post">Test post</a></li>
-			</ul>
-		</li>
-	</ul>
+<nav class="content-full-width">
+	<div class="nav-content">
+		<a class="menu-icon">MENU</a>
+		<ul class="top-level">
+			<li><a href="/">Home page</a></li>
+			<li><a href="/about-me">About me</a></li>
+			<li class="branch">
+				<a class="disabled" aria-disabled="true">Tools</a>
+				<ul>
+					<li><a href="/tools/converter">Universal converter</a></li>
+					<li><a href="/tools/converter">Universal converter</a></li>
+				</ul>
+			</li>
+			<li class="branch hidden">
+				<a class="disabled" aria-disabled="true">Blog</a>
+				<ul>
+					<li><a href="/blog/test-post">Test post</a></li>
+				</ul>
+			</li>
+		</ul>
+	</div>
 </nav>
 
 <style lang="scss">
@@ -25,61 +29,140 @@
 		grid-template-columns: inherit;
 		
 		background-image: linear-gradient(to bottom, black, transparent);
+		background-size: 100% min(100%, 3rem);
+		background-repeat: no-repeat;
+		
 		font-size: 1rem;
 		line-height: 1;
-		z-index: 10;
+		z-index: 10; // not sure if this is needed anymore
 	}
 	
-	nav > ul {
+	.nav-content {
 		grid-column: content-start / content-end;
-		gap: 3rem;
+		
+		display: flex;
+		flex-direction: column;
+	}
+	
+	.menu-icon {
+		display: none;
+		align-self: start;
+		
+		// mobile only
+		@media screen and (max-width: imports.$mobile-screen-size) {
+			display: block;
+		}
 	}
 	
 	ul {
 		list-style: none;
 		margin: 0;
-		padding: 0;
+		padding-left: 1rem;
 		
-		display: flex;	
+		display: none;
+		flex-direction: column;
+		
+		:hover > & {
+			display: flex;
+		}
+		
+		@media #{imports.$desktop-only} {
+			padding: 0;
+			
+			&.top-level {
+				display: flex;
+				flex-direction: row;
+				gap: 3rem;
+			}
+		}
 	}
 	
 	.branch {
 		position: relative;
-		display: flex;
-		justify-content: center;
 		
-		> ul {
-			background-color: var(--bg-100);
-			border-radius: imports.$radius-regular;
-			
-			display: block;
-			position: absolute;
-			top: 100%;
-			
-			white-space: nowrap;
-			opacity: 0;
-			visibility: hidden;
-			transition:
-				opacity 100ms,
-				visibility 100ms;
-		}
-		
-		&:hover > ul {
-			display: block;
-			opacity: 1;
-			visibility: visible;
-		}
-		
-		&::after {
+		& > a::after { // triangle deco for dropdowns, at end of link text
 			content: "";
-			position: absolute;
+			vertical-align: middle;
+			font-size: 0;
+			margin-left: .5rem;
+			
 			border-top: 4px solid currentColor;
 			border-left: 4px solid transparent;
 			border-right: 4px solid transparent;
 			
-			top: calc(100% - 10px);
-			left: 50%;
-			transform: translateX(-50%);
+			// reposition to be below
+			@media #{imports.$desktop-only} {
+				position: absolute;
+				margin-left: 0;
+				
+				top: calc(100% - 10px);
+				left: 50%;
+				transform: translateX(-50%);
+			}
+		}
+		
+		@media #{imports.$desktop-only} {
+			display: flex;
+			justify-content: center;
+		}
+	}
+	
+	// nav link hover deco
+	li {
+		align-self: start;
+	}
+	
+	a {	
+		position: relative;
+		
+		// deco on links in the dropdowns is an underline
+		&::before {
+			content: "";
+			background-color: var(--accent-500);
+			
+			position: absolute;
+			top: calc(1rem + 1.25em); // 1rem = padding
+			left: 0.5rem;
+			right: 0.5rem;
+			height: 0;
+			transition: height 200ms;
+		}
+		
+		:hover > &::before {
+			height: 0.125rem;
+		}
+	}
+	
+	@media #{imports.$desktop-only} {
+		a::before {
+			left: 1.5rem;
+			right: 1.5rem;
+		}
+		
+		// deco is above text, at the screen edge
+		ul.top-level > li > a::before {
+			top: 0;
+			left: 0;
+			right: 0;
+		}
+		
+		.branch > ul {
+			background-color: var(--bg-100);
+			border-radius: imports.$radius-regular;
+			
+			position: absolute;
+			top: 100%;
+			
+			white-space: nowrap; // no text overflows
+			opacity: 0;
+			visibility: hidden;
+			transition: opacity 100ms, visibility 100ms;
+		}
+		
+		.branch:hover > ul {
+			display: flex;
+			opacity: 1;
+			visibility: visible;
 		}
 	}
 	
@@ -87,44 +170,13 @@
 		color: inherit;
 		text-decoration: none;
 		
-		display: block;
-		padding: imports.$padding-large;
+		display: inline-block;
+		padding: imports.$padding-large 0;
 		
-		nav > ul > li > & {
-			padding-left: 0;
-			padding-right: 0;
-		}
-	}
-	
-	// nav link hover deco
-	// above text at the screen edge
-	nav li {
-		position: relative;
-		
-		&::before {
-			content: "";
-			background-color: var(--accent-500);
-			
-			position: absolute;
-			top: 0;
-			left: 0;
-			right: 0;
-			height: 0;
-			transition: height 200ms;
-		}
-		
-		&:hover::before {
-			height: 0.125rem;
-		}
-	}
-	
-	// deco on links in the dropdowns is a text underline
-	.branch li {
-		&::before {
-			top: calc(1rem + 1.25em);
-			// because of the 1.5rem padding
-			left: 1.5rem;
-			right: 1.5rem;
+		@media #{imports.$desktop-only} {
+			.branch ul & { // links in dropdowns
+				padding: imports.$padding-large;
+			}
 		}
 	}
 	

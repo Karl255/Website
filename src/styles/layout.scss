@@ -19,11 +19,18 @@ body {
 }
 
 body > * {
+	grid-column: content-start / content-end;
+}
+
+.content-full-width {
 	grid-column: page-start / page-end;
 }
 
+.content-extra-wide {
+	grid-column: content-wide-start / content-wide-end;
+}
+
 main {
-	grid-column: content-start / content-end;
 	display: flex;
 	flex-direction: column;
 	gap: 3rem;
@@ -43,8 +50,12 @@ main {
 		text-align: left;
 	}
 	
-	// desktop only, smart placement for the last row of columns
-	@media screen and (min-width: imports.$mobile-screen-size) {
+	> * {
+		grid-column: 1 / -1;
+	}
+	
+	// smart placement for the last row of columns
+	@media #{imports.$desktop-only} {
 		&.two-columns > section {
 			grid-column: span 6;
 		}
@@ -68,14 +79,6 @@ main {
 		&.three-columns > section:nth-of-type(3n - 1):nth-last-of-type(1) {
 			grid-column: 7 / span 4;
 		}
-	}
-	
-	// mobile only
-	@media screen and (max-width: imports.$mobile-screen-size) {
-		> * {
-			grid-column: 1 / -1;
-		}
-		
 	}
 }
 

@@ -5,22 +5,25 @@
 <main>
 	<div class="glass hero">
 		<h1>Hi, I'm Karlo.</h1>
-		<p>I am a student who primarily does software development, but I also do some design and occasionally work with electronics.</p>
+		<div class="description">
+			<p>I am a software engineering student. I do software development (primarily), a bit of design and I occasionally work with electronics.</p>
+			<!-- TODO: add a bit more info here -->
+		</div>
 		<a href="/about-me">Learn about me</a>
 		<img src="/profile.jpg" alt="Profile picture">
 	</div>
 </main>
 
 <style lang="scss">
+	@use "../styles/imports";
+	
 	.hero {
-		grid-column: content-start / content-end;
 		display: grid;
 		grid-template-areas:
-			".           profile"
-			"title       profile"
-			"description profile"
-			"link        profile"
-			".           profile";
+			"profile"
+			"title"
+			"description"
+			"link";
 		
 		gap: 1rem;
 		font-size: 1.25rem; // 20px
@@ -29,7 +32,7 @@
 			grid-area: title;
 		}
 		
-		p {
+		.description {
 			grid-area: description;
 		}
 		
@@ -47,12 +50,13 @@
 			border-radius: 50%;
 		}
 		
-		@media (max-width: 768px) {
+		@media #{imports.$desktop-only} {
 			grid-template-areas:
-				"profile"
-				"title"
-				"description"
-				"link";
+				".           profile"
+				"title       profile"
+				"description profile"
+				"link        profile"
+				".           profile";
 		}
 	}
 </style>
