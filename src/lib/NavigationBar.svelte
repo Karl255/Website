@@ -1,13 +1,33 @@
-<nav class="content-full-width">
+<script>
+	import { browser } from "$app/env";
+	//import { beforeNavigate } from "$app/navigation";
+	import { navigating } from "$app/stores";
+	
+	let isOpen = null;
+	navigating.subscribe(v => {
+		if (v) {
+			isOpen = null;
+		}
+	});
+	
+	if (browser) {
+		//beforeNavigate(() => isOpen = null);
+	}
+		
+	function menuToggle() {
+		isOpen = isOpen ? null : true;
+	}
+</script>
+
+<nav class="content-full-width" data-open={isOpen}>
 	<div class="nav-content">
-		<a class="menu-icon">MENU</a>
+		<button class="menu-icon" on:click={menuToggle}>MENU</button>
 		<ul class="top-level">
 			<li><a href="/">Home page</a></li>
 			<li><a href="/about-me">About me</a></li>
 			<li class="branch">
 				<a class="disabled" aria-disabled="true">Tools</a>
 				<ul>
-					<li><a href="/tools/converter">Universal converter</a></li>
 					<li><a href="/tools/converter">Universal converter</a></li>
 				</ul>
 			</li>
@@ -44,16 +64,6 @@
 		flex-direction: column;
 	}
 	
-	.menu-icon {
-		display: none;
-		align-self: start;
-		
-		// mobile only
-		@media screen and (max-width: imports.$mobile-screen-size) {
-			display: block;
-		}
-	}
-	
 	ul {
 		list-style: none;
 		margin: 0;
@@ -62,7 +72,8 @@
 		display: none;
 		flex-direction: column;
 		
-		:hover > & {
+		.branch:hover > &,
+		[data-open] &.top-level {
 			display: flex;
 		}
 		
@@ -112,7 +123,14 @@
 		align-self: start;
 	}
 	
-	a {	
+	button {
+		margin: 0;
+		padding: 0;
+		background: none;
+		border: none
+	}
+	
+	a, .menu-icon {
 		position: relative;
 		
 		// deco on links in the dropdowns is an underline
@@ -127,10 +145,12 @@
 			height: 0;
 			transition: height 200ms;
 		}
-		
-		:hover > &::before {
-			height: 0.125rem;
-		}
+	}
+	
+	// show decoration on hover/opened menu
+	:hover > a::before,
+	[data-open] .menu-icon::before {
+		height: 0.125rem;
 	}
 	
 	@media #{imports.$desktop-only} {
@@ -166,7 +186,7 @@
 		}
 	}
 	
-	a {
+	a, .menu-icon {
 		color: inherit;
 		text-decoration: none;
 		
@@ -177,6 +197,14 @@
 			.branch ul & { // links in dropdowns
 				padding: imports.$padding-large;
 			}
+		}
+	}
+	
+	.menu-icon {
+		align-self: start;
+		
+		@media #{imports.$desktop-only} {
+			display: none;
 		}
 	}
 	

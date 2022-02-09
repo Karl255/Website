@@ -4,8 +4,9 @@ li.heart-marker {
 	
 	&::before {
 		content: "♥";
-		position: absolute;
+		filter: saturate(0) brightness(2); // in some browsers the glyph above becomes a red heart emoji, this turns it white
 		
+		position: absolute;
 		right: calc(100% + 6px);
 	}
 }
