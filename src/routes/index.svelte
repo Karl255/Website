@@ -10,7 +10,7 @@
 			<!-- TODO: add a bit more info here -->
 		</div>
 		<a href="/about-me">Learn about me</a>
-		<img src="/profile.jpg" alt="Profile picture">
+		<img src="/profile.jpg" alt="avatar">
 	</div>
 </main>
 

@@ -8,12 +8,10 @@ const config = {
     "extensions": [".svelte", ...mdsvexConfig.extensions],
 
     kit: {
-		adapter: staticAdapter(),
-		target: 'body'
+		adapter: staticAdapter()
 	},
 
     preprocess: [preprocess({}), mdsvex(mdsvexConfig)]
 };
 
 export default config;
-
