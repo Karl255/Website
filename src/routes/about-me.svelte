@@ -107,7 +107,6 @@
 		<div class="panel-content text-flow">
 			<HiddenHTML encodedHTML="RS1tYWlsOiBrYXJsby5iaXN0cmlja2kyNTZAZ21haWwuY29t" />
 			<h2>Or send a message in this Disqus thread:</h2>
-			<DisqusThread pageIdentifier="about-me" />
 		</div>
 	</section>
 </main>
