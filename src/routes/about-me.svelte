@@ -1,6 +1,5 @@
 <script>
 	import HiddenHTML from "$lib/HiddenHTML.svelte";
-	import DisqusThread from "$lib/DisqusThread.svelte";
 </script>
 
 <main>
