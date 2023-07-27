@@ -5,58 +5,62 @@
 <main>
 	<div class="glass hero">
 		<h1>Hi, I'm Karlo.</h1>
+
 		<div class="description">
-			<p>I am a software engineering student. I do software development (primarily), a bit of design and I occasionally work with electronics.</p>
-			<!-- TODO: add a bit more info here -->
+			<p>I am a software engineering student. My interests lie in software development (full stack), embedded development and design to some extent.</p>
 		</div>
-		<a href="/about-me">Learn about me</a>
-		<img src="/profile.jpg" alt="avatar">
+
+		<p class="about-me-link">
+			<a href="/about-me">Learn about me</a>
+		</p>
+
+		<img src="/profile.jpg" alt="avatar" />
 	</div>
 </main>
 
 <style lang="scss">
 	@use "../styles/imports";
-	
+
 	.hero {
 		display: grid;
 		grid-template-areas:
 			"profile"
 			"title"
 			"description"
-			"link";
-		
+			"about-me-link";
+
 		gap: 1rem;
 		font-size: 1.25rem; // 20px
-		
+
 		h1 {
 			grid-area: title;
 		}
-		
+
 		.description {
 			grid-area: description;
 		}
-		
-		a {
-			grid-area: link;
+
+		.about-me-link {
+			grid-area: about-me-link;
 		}
-		
+
 		img {
 			grid-area: profile;
 			place-self: center;
-			
+
 			width: 240px;
 			aspect-ratio: 1;
 			border: 3px solid var(--bg-200);
 			border-radius: 50%;
 		}
-		
+
 		@media #{imports.$desktop-only} {
 			grid-template-areas:
-				".           profile"
-				"title       profile"
-				"description profile"
-				"link        profile"
-				".           profile";
+				".             profile"
+				"title         profile"
+				"description   profile"
+				"about-me-link profile"
+				".             profile";
 		}
 	}
 </style>
