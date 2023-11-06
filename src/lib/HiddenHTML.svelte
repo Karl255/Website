@@ -10,9 +10,7 @@
 </script>
 
 {#if showing}
-	<!-- TODO: improve this -->
-	<!-- eslint-disable-next-line svelte/no-at-html-tags -->
-	<p>{@html decodedHTML}</p>
+	<p>{decodedHTML}</p>
 {:else}
 	<!-- prettier-ignore -->
 	<button class="btn" on:click={handleShowContent}>Click to reveal</button>
