@@ -1,20 +1,43 @@
 <script lang="ts">
 	import ConverterTextboxV2 from "$lib/ConverterTextbox-v2.svelte";
-	import { formats, type Stream } from "$lib/converter-v2";
+	import { formatOptions, type Format, type Stream } from "$lib/converter-v2";
 	import { writable } from "svelte/store";
 
 	const byteStreamStore = writable<Stream>([]);
+	let selectedFormatIndex: number;
+
+	let chosenFormats: Format[] = formatOptions.map((Class) => new Class());
+
+	function addSelectedFormat() {
+		console.log(selectedFormatIndex);
+		chosenFormats.push(new formatOptions[selectedFormatIndex]());
+		chosenFormats = chosenFormats;
+	}
 </script>
 
-<main>
+<div class="page">
+	<section class="panel">
+		<h2>Choose your formats</h2>
+
+		<div class="panel-content">
+			<select bind:value={selectedFormatIndex}>
+				{#each formatOptions as formatOption, index}
+					<option value={index}>{formatOption.name}</option>
+				{/each}
+			</select>
+
+			<button on:click={addSelectedFormat}>Add</button>
+		</div>
+	</section>
+
 	<div class="flexible-cards">
-		{#each formats as format}
+		{#each chosenFormats as format (format)}
 			<!-- prettier-ignore -->
 			<ConverterTextboxV2 {byteStreamStore} {format} />
 		{/each}
 	</div>
 
-	<section class="panel">
+	<div class="panel">
 		<h1>Universal encoder-decoder V2</h1>
 
 		<div class="panel-content">
@@ -27,11 +50,11 @@
 				<a href="https://github.com/Karl255/Website/">this website's GitHub repo</a>.
 			</p>
 		</div>
-	</section>
-</main>
+	</div>
+</div>
 
 <style lang="scss">
-	main {
+	.page {
 		grid-column: content-wide-start / content-wide-end;
 
 		display: grid;

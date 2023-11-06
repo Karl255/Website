@@ -10,3 +10,8 @@ export interface Format {
 	decode: Decoder;
 	validate: Validator;
 }
+
+export interface FormatOption {
+	new (): Format;
+	name: string;
+}
