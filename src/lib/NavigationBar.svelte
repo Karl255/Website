@@ -33,14 +33,6 @@
 					<li><a href="/tools/converter">Universal converter</a></li>
 				</ul>
 			</li>
-			<li class="branch hidden">
-				<!-- prettier-ignore -->
-				<a href="." class="disabled" aria-disabled="true">Blog</a
-				>
-				<ul>
-					<li><a href="/blog/test-post">Test post</a></li>
-				</ul>
-			</li>
 		</ul>
 	</div>
 </nav>
