@@ -5,8 +5,8 @@ const htmlEncodingDummy: { element: any | null } = { element: null };
 
 export type Stream = number[];
 
-function stringToStream(str: string, func: (char: number) => number = c => c): Stream {
-	return [...str].map(c => func(c.charCodeAt(0)));
+function stringToStream(str: string, func: (char: number) => number = (c) => c): Stream {
+	return [...str].map((c) => func(c.charCodeAt(0)));
 }
 
 // text
@@ -82,8 +82,8 @@ function decodeHex(input: string): Stream | undefined {
 		return;
 	}
 
-	input = input
-		.trim()
+	// eslint-disable-next-line prettier/prettier
+	input = input.trim()
 		.replaceAll(" ", "")
 		.replaceAll("\n", "")
 		.replaceAll("\r", "")
@@ -107,6 +107,7 @@ function encodeHex(stream: Stream): string | undefined {
 		return;
 	}
 
+	// eslint-disable-next-line prettier/prettier
 	return stream
 		.map(x => ("00" + x.toString(16)).slice(-2))
 		.join(" ");
@@ -118,8 +119,8 @@ function decodeBinary(input: string): Stream | undefined {
 		return;
 	}
 
-	input = input
-		.trim()
+	// eslint-disable-next-line prettier/prettier
+	input = input.trim()
 		.replaceAll(" ", "")
 		.replaceAll("\n", "")
 		.replaceAll("\r", "")
@@ -143,6 +144,7 @@ function encodeBinary(stream: Stream): string | undefined {
 		return;
 	}
 
+	// eslint-disable-next-line prettier/prettier
 	return stream
 		.map(x => ("00000000" + x.toString(2)).slice(-8))
 		.join(" ");
@@ -154,8 +156,8 @@ function decodeDecimal(input: string): Stream | undefined {
 		return;
 	}
 
-	input = input
-		.trim()
+	// eslint-disable-next-line prettier/prettier
+	input = input.trim()
 		.replaceAll("\n", " ")
 		.replaceAll("\r", " ")
 		.replaceAll("\t", " ");
@@ -168,7 +170,7 @@ function decodeDecimal(input: string): Stream | undefined {
 		return [];
 	}
 
-	return input.split(" ").map(x => parseInt(x) % 256);
+	return input.split(" ").map((x) => parseInt(x) % 256);
 }
 
 function encodeDecimal(stream: Stream): string | undefined {
@@ -176,6 +178,7 @@ function encodeDecimal(stream: Stream): string | undefined {
 		return;
 	}
 
+	// eslint-disable-next-line prettier/prettier
 	return stream
 		.map(x => x.toString())
 		.join(" ");
@@ -187,8 +190,8 @@ function decodeBase64(input: string): Stream | undefined {
 		return;
 	}
 
-	input = input
-		.trim()
+	// eslint-disable-next-line prettier/prettier
+	input = input.trim()
 		.replaceAll(" ", "")
 		.replaceAll("\n", "")
 		.replaceAll("\r", "")
@@ -240,10 +243,12 @@ function charCodeRot13(char: number) {
 	const char_Z = "Z".charCodeAt(0);
 	const char_z = "z".charCodeAt(0);
 
-	if (char >= char_A && char <= char_M || char >= char_a && char <= char_m) { // first 13
+	if ((char >= char_A && char <= char_M) || (char >= char_a && char <= char_m)) {
+		// first 13
 		return char + 13;
 	}
-	if (char >= char_N && char <= char_Z || char >= char_n && char <= char_z) { // last 13
+	if ((char >= char_N && char <= char_Z) || (char >= char_n && char <= char_z)) {
+		// last 13
 		return char - 13;
 	}
 
