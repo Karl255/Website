@@ -10,7 +10,10 @@ const config = {
 	preprocess: [preprocess({}), mdsvex(mdsvexConfig)],
 
     kit: {
-		adapter: adapter()
+		adapter: adapter(),
+		alias: {
+			"$styles": "src/styles",
+		}
 	},
 
 };
