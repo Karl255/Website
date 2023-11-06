@@ -26,7 +26,7 @@
 	<section class="panel">
 		<h1>Universal encoder-decoder</h1>
 
-		<div class="panel-content">
+		<div class="panel__content">
 			<p>
 				This tool converts between several encodings at once, right as you type. Currently the converter doesn't
 				work perfectly with Unicode.

@@ -52,7 +52,7 @@
 
 	<!-- NOTE: order of on:input and bind:value is important -->
 	<textarea
-		class="panel-content code"
+		class="panel__content code"
 		class:invalid={!delayedValid}
 		rows="8"
 		on:input={(e) => onInput(e.currentTarget.value)}

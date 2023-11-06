@@ -7,13 +7,17 @@
 		<h1>Hi, I'm Karlo.</h1>
 
 		<div class="description">
-			<p>I am a software engineering student. My interests lie in software development (full stack), embedded development and design to some extent.</p>
+			<p>
+				I am a software engineering student. My interests lie in software development (full stack), embedded
+				development and design to some extent.
+			</p>
 		</div>
 
 		<p class="about-me-link">
 			<a href="/about-me">Learn about me</a>
 		</p>
 
+		<!-- prettier-ignore -->
 		<img src="/profile.jpg" alt="avatar" />
 	</div>
 </main>

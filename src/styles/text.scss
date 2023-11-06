@@ -128,15 +128,8 @@ code,
 
 textarea {
 	display: block;
-	
-	background-color: var(--bg-200);
 	border: none;
-	border-radius: .5rem;
-	
 	margin: 0;
-	padding: .5rem;
-	
-	transition: background-color 100ms;
 	
 	&:focus {
 		outline: none;

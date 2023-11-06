@@ -19,7 +19,7 @@
 	<section class="panel">
 		<h2>Choose your formats</h2>
 
-		<div class="panel-content">
+		<div class="panel__content">
 			<select bind:value={selectedFormatIndex}>
 				{#each formatOptions as formatOption, index}
 					<option value={index}>{formatOption.name}</option>
@@ -40,7 +40,7 @@
 	<div class="panel">
 		<h1>Universal encoder-decoder V2</h1>
 
-		<div class="panel-content">
+		<div class="panel__content">
 			<p>
 				This tool converts between several encodings at once, right as you type. Currently the converter doesn't
 				work perfectly with Unicode.

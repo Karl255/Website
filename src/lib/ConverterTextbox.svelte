@@ -31,7 +31,7 @@
 	<!-- eslint-disable-next-line svelte/no-at-html-tags -->
 	<h1>{@html title}</h1>
 	<textarea
-		class="panel-content code"
+		class="panel__content code"
 		rows="8"
 		on:input={handleInput}
 		bind:value

@@ -6,7 +6,7 @@
 	<section class="panel">
 		<h1 class="center">What I do</h1>
 
-		<div class="panel-content columns three-columns">
+		<div class="panel__content columns three-columns">
 			<section class="text-flow">
 				<h2>Software</h2>
 				<p>
@@ -33,7 +33,7 @@
 	<section class="panel">
 		<h1 class="center">What I know</h1>
 
-		<div class="panel-content columns two-columns">
+		<div class="panel__content columns two-columns">
 			<section class="text-flow">
 				<h2>Languages</h2>
 				<ul>
@@ -77,7 +77,7 @@
 	<section class="panel">
 		<h1 class="center">What I did</h1>
 
-		<div class="panel-content columns three-columns">
+		<div class="panel__content columns three-columns">
 			<section class="text-flow">
 				<h2><a href="https://github.com/Karl255/UserCSS-Styles">UserCSS-Styles</a></h2>
 				<p>A couple UserCSS styles I made and published to make the web prettier for me and others as well.</p>
@@ -147,7 +147,7 @@
 	<section class="panel">
 		<h1 class="center">Contact me</h1>
 
-		<div class="panel-content text-flow">
+		<div class="panel__content text-flow">
 			<HiddenHTML encodedHTML="RS1tYWlsOiBrYXJsby5iaXN0cmlja2kyNTZAZ21haWwuY29t" />
 		</div>
 	</section>
