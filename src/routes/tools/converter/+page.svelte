@@ -1,10 +1,10 @@
-<script>
+<script lang="ts">
 	import { onMount } from "svelte";
-	import ConverterTextbox from "$lib/ConverterTextbox.svelte"
-	import converter from "$lib/converter.js";
-	
-	let dummyElement;
-	
+	import ConverterTextbox from "$lib/ConverterTextbox.svelte";
+	import converter from "$lib/converter";
+
+	let dummyElement: any; // TODO
+
 	// element bindings aren't instantly initialized
 	onMount(() => {
 		converter.htmlEncodingDummy.element = dummyElement;
@@ -15,7 +15,7 @@
 <main>
 	<div class="flexible-cards">
 		{#each converter.formats as format}
-		<ConverterTextbox byteStream={converter.byteStream} decoder={format.decode} encoder={format.encode} title={format.name} />
+			<ConverterTextbox byteStream={converter.byteStream} decoder={format.decode} encoder={format.encode} title={format.name} />
 		{/each}
 	</div>
 		

@@ -1,19 +1,19 @@
-<script>
+<script lang="ts">
 	import { browser } from "$app/environment";
 	//import { beforeNavigate } from "$app/navigation";
 	import { navigating } from "$app/stores";
-	
-	let isOpen = null;
+
+	let isOpen: null | true = null;
 	navigating.subscribe(v => {
 		if (v) {
 			isOpen = null;
 		}
 	});
-	
+
 	if (browser) {
 		//beforeNavigate(() => isOpen = null);
 	}
-		
+
 	function menuToggle() {
 		isOpen = isOpen ? null : true;
 	}

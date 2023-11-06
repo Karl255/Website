@@ -1,4 +1,4 @@
-<script>
+<script lang="ts">
 	import HiddenHTML from "$lib/HiddenHTML.svelte";
 </script>
 

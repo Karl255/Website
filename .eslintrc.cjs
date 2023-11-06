@@ -1,5 +1,6 @@
 module.exports = {
-	root: true,extends: ["eslint:recommended", "plugin:@typescript-eslint/recommended", "plugin:svelte/recommended", "prettier"],
+	root: true,
+	extends: ["eslint:recommended", "plugin:@typescript-eslint/recommended", "plugin:svelte/recommended", "prettier"],
 	parser: "@typescript-eslint/parser",
 	parserOptions: {
 		sourceType: "module",
@@ -34,5 +35,6 @@ module.exports = {
 				argsIgnorePattern: "^_",
 			},
 		],
+		"@typescript-eslint/no-explicit-any": ["off"], // TODO: remove
 	},
 };

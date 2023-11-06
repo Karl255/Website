@@ -1,8 +1,8 @@
-<script>
-	export let encodedHTML;
+<script lang="ts">
+	export let encodedHTML: string;
 	let decodedHTML = "";
 	let showing = false;
-	
+
 	function handleShowContent() {
 		showing = true;
 		decodedHTML = atob(encodedHTML);
