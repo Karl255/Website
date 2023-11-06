@@ -8,19 +8,39 @@
 	let text: string;
 	let valid: boolean;
 
+	let delayedValidTimer: number;
+	let delayedValid: boolean;
+
 	byteStreamStore.subscribe((byteStream) => {
 		text = format.encode(byteStream);
+		setValid(true);
 	});
 
+	function setValid(value: boolean, skipDebounce: boolean = false) {
+		valid = value;
+
+		clearTimeout(delayedValidTimer);
+
+		if (value || skipDebounce) {
+			delayedValid = value;
+		} else {
+			delayedValidTimer = setTimeout(() => {
+				delayedValid = value;
+			}, 500);
+		}
+	}
+
 	function onInput(input: string) {
-		valid = format.validate(input);
+		setValid(format.validate(input));
 
 		if (valid) {
 			byteStreamStore.set(format.decode(input));
 		}
 	}
 
-	function onDeselect() {
+	function onDeselect(input: string) {
+		setValid(format.validate(input), true);
+
 		if (valid) {
 			text = format.encode(get(byteStreamStore));
 		}
@@ -30,13 +50,14 @@
 <section class="panel">
 	<h2>{format.name}</h2>
 
-	<!-- NOTE: order of on:input and bind:valud IS IMPORTANT -->
+	<!-- NOTE: order of on:input and bind:value is important -->
 	<textarea
 		class="panel-content code"
+		class:invalid={!delayedValid}
 		rows="8"
 		on:input={(e) => onInput(e.currentTarget.value)}
+		on:blur={(e) => onDeselect(e.currentTarget.value)}
 		bind:value={text}
-		on:blur={() => onDeselect()}
 		autocapitalize="none"
 		autocomplete="off"
 		autocorrect="off"
@@ -48,5 +69,9 @@
 	textarea {
 		width: 100%;
 		resize: none;
+	}
+
+	.invalid {
+		outline: 1px solid red;
 	}
 </style>

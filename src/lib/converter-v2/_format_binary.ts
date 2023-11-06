@@ -1,4 +1,5 @@
 import type { Format, Stream } from "./_format";
+import { removeWhitespace } from "./_util";
 
 // TODO
 const binaryFormat: Format = {
@@ -18,7 +19,7 @@ const binaryFormat: Format = {
 			.join(" ");
 	},
 	validate: (format: string) => {
-		return format.length % 8 == 0 && !!format.match(/^[01\s]*$/);
+		return removeWhitespace(format).length % 8 == 0 && !!format.match(/^[01\s]*$/);
 	},
 };
 
