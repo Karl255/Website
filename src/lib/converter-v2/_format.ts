@@ -1,3 +1,5 @@
+import type { ComponentType, SvelteComponent } from "svelte";
+
 export type Stream = number[];
 
 export type Encoder = (stream: Stream) => string;
@@ -12,6 +14,11 @@ export interface Format {
 }
 
 export interface FormatOption {
-	new (): Format;
+	new (options?: any): Format;
 	name: string;
+	OptionsComponent?: ComponentType<OptionsComponent>;
+}
+
+export interface OptionsComponent extends SvelteComponent {
+	getSettings(): any;
 }

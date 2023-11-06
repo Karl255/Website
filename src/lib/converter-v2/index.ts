@@ -1,5 +1,6 @@
 import type { FormatOption } from "./_format";
 import AsciiFormat from "./_format_ascii";
+import BaseNFormat from "./_format_baseN";
 import BinaryFormat from "./_format_binary";
 import HexFormat from "./_format_hex";
 
@@ -7,9 +8,10 @@ export * from "./_format";
 
 // prettier-ignore
 export const formatOptions: FormatOption[] = [
+	AsciiFormat,
+	BaseNFormat,
 	HexFormat,
 	BinaryFormat,
-	AsciiFormat,
 ];
 
 /*

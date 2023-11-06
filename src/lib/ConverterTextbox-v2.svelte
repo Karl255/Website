@@ -1,6 +1,9 @@
 <script lang="ts">
 	import { get, type Writable } from "svelte/store";
 	import type { Format, Stream } from "./converter-v2";
+	import { createEventDispatcher } from "svelte";
+
+	const dispatch = createEventDispatcher<{ remove: null }>();
 
 	export let byteStreamStore: Writable<Stream>;
 	export let format: Format;
@@ -48,7 +51,10 @@
 </script>
 
 <section class="panel">
-	<h2>{format.name}</h2>
+	<div class="header">
+		<h2>{format.name}</h2>
+		<button on:click={() => dispatch("remove")}>X</button>
+	</div>
 
 	<!-- NOTE: order of on:input and bind:value is important -->
 	<textarea
@@ -69,6 +75,25 @@
 	textarea {
 		width: 100%;
 		resize: none;
+	}
+
+	.header {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+
+		button {
+			background: none;
+			border: none;
+			border-radius: 0.25rem;
+			padding: 0.25rem;
+			line-height: 1;
+			cursor: pointer;
+
+			&:hover {
+				background-color: var(--glass-400);
+			}
+		}
 	}
 
 	.invalid {
