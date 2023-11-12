@@ -1,8 +1,8 @@
 import type { Format, FormatOption } from "./_format";
-import AsciiFormat from "./_format_ascii";
-import BaseNFormat from "./_format_baseN";
-import BinaryFormat from "./_format_binary";
-import HexFormat from "./_format_hex";
+import AsciiFormat from "./_AsciiFormat";
+import BaseNFormat from "./_BaseNFormat";
+import BinaryFormat from "./_BinaryFormat";
+import HexFormat from "./_HexFormat";
 
 export * from "./_format";
 

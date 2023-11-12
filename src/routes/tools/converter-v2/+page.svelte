@@ -37,9 +37,9 @@
 			</select>
 
 			<div class="stretch">
-				{#if formatOptions[selectedFormatIndex].OptionsComponent}
+				{#if formatOptions[selectedFormatIndex].CreationArgumentsComponent}
 					<svelte:component
-						this={formatOptions[selectedFormatIndex].OptionsComponent}
+						this={formatOptions[selectedFormatIndex].CreationArgumentsComponent}
 						bind:this={optionsComponent}
 					/>
 				{/if}

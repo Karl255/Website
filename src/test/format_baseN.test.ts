@@ -1,5 +1,5 @@
+import BaseNFormat from "$lib/converter-v2/_BaseNFormat";
 import { beforeEach, describe, expect, test } from "vitest";
-import BaseNFormat from "$lib/converter-v2/_format_baseN";
 
 test("default base is 10", () => {
 	expect(new BaseNFormat().base).toBe(10);

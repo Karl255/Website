@@ -1,9 +1,9 @@
 <script lang="ts">
-	import type { BaseNFormatOptions } from "./_format_baseN";
+	import type { BaseNFormatCreationArguments } from "../_BaseNFormat";
 
 	let base: number = 10;
 
-	export function getSettings(): BaseNFormatOptions {
+	export function getSettings(): BaseNFormatCreationArguments {
 		return { base };
 	}
 </script>

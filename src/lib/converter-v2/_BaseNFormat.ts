@@ -1,7 +1,7 @@
-import _OptionsBaseN from "./_Options_BaseN.svelte";
+import _OptionsBaseN from "./_components/BaseNCreationArguments.svelte";
 import type { Format, Stream } from "./_format";
 
-export interface BaseNFormatOptions {
+export interface BaseNFormatCreationArguments {
 	base?: number;
 }
 
@@ -14,7 +14,7 @@ export default class BaseNFormat implements Format {
 	base: number;
 	validationPattern: any;
 
-	constructor(options?: BaseNFormatOptions) {
+	constructor(options?: BaseNFormatCreationArguments) {
 		this.base = options?.base ?? 10;
 
 		const validDigits = allDigits.slice(0, this.base);
