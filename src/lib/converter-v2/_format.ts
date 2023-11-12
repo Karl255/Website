@@ -2,6 +2,14 @@ import type { ComponentType, SvelteComponent } from "svelte";
 
 export type Stream = number[];
 
+export interface FormatCreateArgumentsComponent<T> extends SvelteComponent {
+	getCreationArguments(): T;
+}
+
+export interface FormatOptionsComponent<T> extends SvelteComponent<any, { change: CustomEvent<null> }> {
+	getOptions(): T;
+}
+
 export interface FormatType<TArgs = never, TOptions = never> {
 	CreationArgumentsComponent?: ComponentType<FormatCreateArgumentsComponent<TArgs>>;
 	name: string;
@@ -15,12 +23,4 @@ export interface Format<TOptions = never> {
 	encode: (stream: Stream) => string;
 	decode: (format: string) => Stream;
 	validate: (format: string) => boolean;
-}
-
-export interface FormatCreateArgumentsComponent<T> extends SvelteComponent {
-	getCreationArguments(): T;
-}
-
-export interface FormatOptionsComponent<T> extends SvelteComponent {
-	getOptions(): T;
 }

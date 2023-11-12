@@ -1,12 +1,13 @@
 <script lang="ts">
 	import { createEventDispatcher } from "svelte";
 	import { get, type Writable } from "svelte/store";
-	import type { Format, Stream } from "./converter-v2";
+	import type { Format, FormatOptionsComponent, Stream } from "./converter-v2";
 
 	const dispatch = createEventDispatcher<{ remove: null }>();
 
 	export let byteStreamStore: Writable<Stream>;
 	export let format: Format<any>;
+	let optionsComponent: FormatOptionsComponent<any> | null = null;
 
 	let text: string;
 	let valid: boolean;
@@ -18,6 +19,10 @@
 		text = format.encode(byteStream);
 		setValid(true);
 	});
+
+	function reformat() {
+		text = format.encode(get(byteStreamStore));
+	}
 
 	function setValid(value: boolean, skipDebounce: boolean = false) {
 		valid = value;
@@ -45,7 +50,17 @@
 		setValid(format.validate(input), true);
 
 		if (valid) {
-			text = format.encode(get(byteStreamStore));
+			reformat();
+		}
+	}
+
+	function onOptionsChanged() {
+		if (optionsComponent) {
+			format.options = optionsComponent.getOptions();
+
+			if (valid) {
+				reformat();
+			}
 		}
 	}
 </script>
@@ -54,7 +69,11 @@
 	<div class="header">
 		<h2>{format.name}</h2>
 		{#if format.OptionsComponent}
-			<svelte:component this={format.OptionsComponent} />
+			<svelte:component
+				this={format.OptionsComponent}
+				bind:this={optionsComponent}
+				on:change={onOptionsChanged}
+			/>
 		{/if}
 		<button on:click={() => dispatch("remove")}>X</button>
 	</div>

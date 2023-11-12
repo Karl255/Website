@@ -13,7 +13,7 @@
 
 	let selectedFormatIndex: number = 0;
 	let chosenFormats: Format<any>[] = defaultFormats;
-	let optionsComponent: FormatCreateArgumentsComponent<any> | null;
+	let optionsComponent: FormatCreateArgumentsComponent<any> | null = null;
 
 	function addSelectedFormat() {
 		chosenFormats.push(new formatTypes[selectedFormatIndex](optionsComponent?.getCreationArguments()));
