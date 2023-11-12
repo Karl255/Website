@@ -11,7 +11,7 @@
 	let text: string;
 	let valid: boolean;
 
-	let delayedValidTimer: number;
+	let delayedValidTimer: ReturnType<typeof setTimeout>;
 	let delayedValid: boolean;
 
 	byteStreamStore.subscribe((byteStream) => {
