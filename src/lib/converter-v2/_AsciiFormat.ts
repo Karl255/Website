@@ -1,4 +1,4 @@
-import type { Format, Stream } from "./_format";
+import type { Format, FormatType, Stream } from "./_format";
 
 export default class AsciiFormat implements Format {
 	static name = "ASCII";
@@ -19,3 +19,5 @@ export default class AsciiFormat implements Format {
 		return [...format].every((char) => char.charCodeAt(0) < 256);
 	}
 }
+
+AsciiFormat satisfies FormatType;

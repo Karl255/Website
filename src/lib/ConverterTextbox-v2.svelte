@@ -1,12 +1,12 @@
 <script lang="ts">
+	import { createEventDispatcher } from "svelte";
 	import { get, type Writable } from "svelte/store";
 	import type { Format, Stream } from "./converter-v2";
-	import { createEventDispatcher } from "svelte";
 
 	const dispatch = createEventDispatcher<{ remove: null }>();
 
 	export let byteStreamStore: Writable<Stream>;
-	export let format: Format;
+	export let format: Format<any>;
 
 	let text: string;
 	let valid: boolean;
@@ -53,6 +53,9 @@
 <section class="panel">
 	<div class="header">
 		<h2>{format.name}</h2>
+		{#if format.OptionsComponent}
+			<svelte:component this={format.OptionsComponent} />
+		{/if}
 		<button on:click={() => dispatch("remove")}>X</button>
 	</div>
 
@@ -79,14 +82,17 @@
 
 	.header {
 		display: flex;
-		justify-content: space-between;
 		align-items: center;
+		gap: 1rem;
 
 		button {
 			background: none;
 			border: none;
 			border-radius: 0.25rem;
+
+			margin-left: auto;
 			padding: 0.25rem;
+
 			line-height: 1;
 			cursor: pointer;
 

@@ -1,4 +1,4 @@
-import type { Format, Stream } from "./_format";
+import type { Format, FormatType, Stream } from "./_format";
 import { removeWhitespace } from "./_util";
 
 export default class BinaryFormat implements Format {
@@ -28,3 +28,5 @@ export default class BinaryFormat implements Format {
 		return removeWhitespace(format).length % 8 == 0 && !!format.match(/^[01\s]*$/);
 	}
 }
+
+BinaryFormat satisfies FormatType;

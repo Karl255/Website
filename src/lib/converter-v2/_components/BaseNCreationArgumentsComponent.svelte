@@ -3,7 +3,7 @@
 
 	let base: number = 10;
 
-	export function getSettings(): BaseNFormatCreationArguments {
+	export function getCreationArguments(): BaseNFormatCreationArguments {
 		return { base };
 	}
 </script>

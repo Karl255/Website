@@ -1,4 +1,4 @@
-import type { Format, Stream } from "./_format";
+import type { Format, FormatType, Stream } from "./_format";
 import { removeWhitespace } from "./_util";
 
 export default class HexFormat implements Format {
@@ -27,3 +27,5 @@ export default class HexFormat implements Format {
 		return removeWhitespace(format).length % 2 == 0 && !!format.match(/^[0-9a-fA-F\s]*$/);
 	}
 }
+
+HexFormat satisfies FormatType;

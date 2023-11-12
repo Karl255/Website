@@ -2,9 +2,9 @@
 	import ConverterTextboxV2 from "$lib/ConverterTextbox-v2.svelte";
 	import {
 		defaultFormats,
-		formatOptions,
-		type CreateArgumentsComponent,
+		formatTypes,
 		type Format,
+		type FormatCreateArgumentsComponent,
 		type Stream,
 	} from "$lib/converter-v2";
 	import { writable } from "svelte/store";
@@ -12,15 +12,15 @@
 	const byteStreamStore = writable<Stream>([]);
 
 	let selectedFormatIndex: number = 0;
-	let chosenFormats: Format[] = defaultFormats;
-	let optionsComponent: CreateArgumentsComponent | null;
+	let chosenFormats: Format<any>[] = defaultFormats;
+	let optionsComponent: FormatCreateArgumentsComponent<any> | null;
 
 	function addSelectedFormat() {
-		chosenFormats.push(new formatOptions[selectedFormatIndex](optionsComponent?.getSettings()));
+		chosenFormats.push(new formatTypes[selectedFormatIndex](optionsComponent?.getCreationArguments()));
 		chosenFormats = chosenFormats;
 	}
 
-	function removeFormat(removedFormat: Format) {
+	function removeFormat(removedFormat: Format<any>) {
 		chosenFormats = chosenFormats.filter((format) => format !== removedFormat);
 	}
 </script>
@@ -31,15 +31,15 @@
 
 		<div class="panel__content format-options">
 			<select bind:value={selectedFormatIndex}>
-				{#each formatOptions as formatOption, index}
+				{#each formatTypes as formatOption, index}
 					<option value={index}>{formatOption.name}</option>
 				{/each}
 			</select>
 
 			<div class="stretch">
-				{#if formatOptions[selectedFormatIndex].CreationArgumentsComponent}
+				{#if formatTypes[selectedFormatIndex].CreationArgumentsComponent}
 					<svelte:component
-						this={formatOptions[selectedFormatIndex].CreationArgumentsComponent}
+						this={formatTypes[selectedFormatIndex].CreationArgumentsComponent}
 						bind:this={optionsComponent}
 					/>
 				{/if}
