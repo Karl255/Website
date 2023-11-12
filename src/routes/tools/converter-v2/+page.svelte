@@ -1,13 +1,19 @@
 <script lang="ts">
 	import ConverterTextboxV2 from "$lib/ConverterTextbox-v2.svelte";
-	import { formatOptions, type Format, type Stream, type OptionsComponent } from "$lib/converter-v2";
+	import {
+		defaultFormats,
+		formatOptions,
+		type CreateArgumentsComponent,
+		type Format,
+		type Stream,
+	} from "$lib/converter-v2";
 	import { writable } from "svelte/store";
 
 	const byteStreamStore = writable<Stream>([]);
 
 	let selectedFormatIndex: number = 0;
-	let chosenFormats: Format[] = formatOptions.map((Class) => new Class());
-	let optionsComponent: OptionsComponent | null;
+	let chosenFormats: Format[] = defaultFormats;
+	let optionsComponent: CreateArgumentsComponent | null;
 
 	function addSelectedFormat() {
 		chosenFormats.push(new formatOptions[selectedFormatIndex](optionsComponent?.getSettings()));

@@ -1,4 +1,4 @@
-import type { FormatOption } from "./_format";
+import type { Format, FormatOption } from "./_format";
 import AsciiFormat from "./_format_ascii";
 import BaseNFormat from "./_format_baseN";
 import BinaryFormat from "./_format_binary";
@@ -12,6 +12,13 @@ export const formatOptions: FormatOption[] = [
 	BaseNFormat,
 	HexFormat,
 	BinaryFormat,
+];
+
+export const defaultFormats: Format[] = [
+	new AsciiFormat(),
+	new BaseNFormat({ base: 16 }),
+	new BaseNFormat({ base: 2 }),
+	new BaseNFormat({ base: 10 }),
 ];
 
 /*

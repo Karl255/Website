@@ -13,12 +13,12 @@ export interface Format {
 	validate: Validator;
 }
 
+export interface CreateArgumentsComponent extends SvelteComponent {
+	getSettings(): any;
+}
+
 export interface FormatOption {
 	new (options?: any): Format;
 	name: string;
-	OptionsComponent?: ComponentType<OptionsComponent>;
-}
-
-export interface OptionsComponent extends SvelteComponent {
-	getSettings(): any;
+	OptionsComponent?: ComponentType<CreateArgumentsComponent>;
 }
