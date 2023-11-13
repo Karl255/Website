@@ -1,7 +1,5 @@
 import AsciiFormat from "./_AsciiFormat";
 import BaseNFormat from "./_BaseNFormat";
-import BinaryFormat from "./_BinaryFormat";
-import HexFormat from "./_HexFormat";
 import type { Format, FormatType } from "./_format";
 
 export * from "./_format";
@@ -10,8 +8,6 @@ export * from "./_format";
 export const formatTypes: FormatType<any, any>[] = [
 	AsciiFormat satisfies FormatType<any, never>,
 	BaseNFormat,
-	HexFormat,
-	BinaryFormat,
 ];
 
 export const defaultFormats: Format<any>[] = [
