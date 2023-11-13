@@ -1,6 +1,7 @@
 import AsciiFormat from "./_AsciiFormat";
 import BaseNFormat from "./_BaseNFormat";
 import HtmlEntitiesFormat from "./_HtmlEntitiesFormat";
+import UrlFormat from "./_UrlFormat";
 import type { Format, FormatType } from "./_format";
 
 export * from "./_format";
@@ -10,6 +11,7 @@ export const formatTypes: FormatType<any, any>[] = [
 	AsciiFormat,
 	BaseNFormat,
 	HtmlEntitiesFormat,
+	UrlFormat,
 ];
 
 export const defaultFormats: Format<any>[] = [
