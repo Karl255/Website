@@ -1,10 +1,10 @@
 <script lang="ts">
 	import { createEventDispatcher } from "svelte";
-	import { Leading0Option, type BaseNFormatOptions } from "../_BaseNFormat";
+	import { Leading0Option, type BaseNFormatOptions, defaultOptions } from "../_BaseNFormat";
 
 	const dispatch = createEventDispatcher<{ change: null }>();
 
-	let leading0Option: Leading0Option = Leading0Option.Pad;
+	let leading0Option: Leading0Option = defaultOptions.leading0s;
 
 	export function getOptions(): BaseNFormatOptions {
 		return { leading0s: leading0Option };
@@ -18,7 +18,7 @@
 <!-- prettier-ignore -->
 <select bind:value={leading0Option} on:change={onChange}>
 	{#each Object.values(Leading0Option) as option}
-		<option value={option} selected={option === Leading0Option.Pad}>
+		<option value={option} selected={option === defaultOptions.leading0s}>
 			{option}
 		</option>
 	{/each}

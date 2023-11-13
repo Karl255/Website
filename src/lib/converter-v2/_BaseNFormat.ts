@@ -7,7 +7,6 @@ export interface BaseNFormatCreationArguments {
 }
 
 export enum Leading0Option {
-	NoChange = "No change",
 	Pad = "0 pad",
 	Trim = "Trim leading",
 }
@@ -15,6 +14,10 @@ export enum Leading0Option {
 export interface BaseNFormatOptions {
 	leading0s: Leading0Option;
 }
+
+export const defaultOptions: BaseNFormatOptions = {
+	leading0s: Leading0Option.Pad,
+};
 
 const allDigits = "0123456789abcdefghijklmnopqrstuvwxyz";
 
@@ -24,15 +27,18 @@ export default class BaseNFormat implements Format<BaseNFormatOptions> {
 	OptionsComponent = BaseNOptionsComponent;
 
 	base: number;
-	validationPattern: any;
 	options: BaseNFormatOptions;
 
-	constructor(args?: BaseNFormatCreationArguments, options?: BaseNFormatOptions) {
+	private validationPattern: any;
+	private padding: string;
+
+	constructor(args?: BaseNFormatCreationArguments) {
 		this.base = args?.base ?? 10;
-		this.options = options ?? { leading0s: Leading0Option.Pad };
+		this.options = defaultOptions;
 
 		const validDigits = allDigits.slice(0, this.base);
 		this.validationPattern = new RegExp(`^[${validDigits}\\s]*$`);
+		this.padding = "0".repeat((255).toString(this.base).length);
 	}
 
 	get name() {
@@ -48,10 +54,12 @@ export default class BaseNFormat implements Format<BaseNFormatOptions> {
 	}
 
 	encode(stream: Stream) {
-		// prettier-ignore
-		return stream
-			.map((byte) => byte.toString(this.base))
-			.join(" ");
+		const encodeWord: (word: number) => string =
+			this.options.leading0s === Leading0Option.Pad
+				? (word) => (this.padding + word.toString(this.base)).slice(-this.padding.length)
+				: (word) => word.toString(this.base);
+
+		return stream.map(encodeWord).join(" ");
 	}
 
 	validate(format: string) {
