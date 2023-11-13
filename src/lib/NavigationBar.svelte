@@ -13,6 +13,8 @@
 	}
 </script>
 
+<!-- TODO: redesign this, this is just horribly bad in so many ways -->
+
 <nav
 	class="content-full-width"
 	data-open={isOpen}
@@ -27,10 +29,10 @@
 			<li><a href="/about-me">About me</a></li>
 			<li class="branch">
 				<!-- prettier-ignore -->
-				<a href="." class="disabled" aria-disabled="true">Tools</a
-				>
+				<a href="." class="disabled" aria-disabled="true">Tools</a>
 				<ul>
 					<li><a href="/tools/converter">Universal converter</a></li>
+					<li><a href="/tools/converter-v2">Universal converter v2 (preview)</a></li>
 				</ul>
 			</li>
 		</ul>
@@ -165,7 +167,10 @@
 		}
 
 		.branch > ul {
+			text-align: center;
+
 			background-color: var(--bg-100);
+			border: 1px solid var(--border-100);
 			border-radius: imports.$radius-regular;
 
 			position: absolute;
@@ -183,6 +188,10 @@
 			display: flex;
 			opacity: 1;
 			visibility: visible;
+		}
+
+		li {
+			align-self: revert;
 		}
 	}
 
