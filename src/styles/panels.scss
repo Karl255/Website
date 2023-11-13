@@ -9,21 +9,28 @@
 		padding: 0.5rem 1rem;
 	}
 
-	.panel__content {
+	&__content {
 		background-color: var(--bg-100);
 
 		padding: 1rem;
 		border-radius: 0;
 	}
 
-	.panel__content:first-child {
+	&__content:first-child {
 		border-top-left-radius: imports.$radius-regular;
 		border-top-right-radius: imports.$radius-regular;
 	}
 
-	.panel__content:last-child {
+	&__content:last-child {
 		border-bottom-left-radius: imports.$radius-regular;
 		border-bottom-right-radius: imports.$radius-regular;
+	}
+
+	&__separator {
+		margin: 0;
+		padding: 0;
+		border: none;
+		border-top: 1px solid var(--border-100);
 	}
 }
 

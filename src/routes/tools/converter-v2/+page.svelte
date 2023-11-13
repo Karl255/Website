@@ -27,7 +27,12 @@
 
 <div class="page">
 	<section class="panel">
-		<h2>Choose your formats</h2>
+		<div class="info-header">
+			<h2>Universal converter v2</h2>
+			{#if $byteStreamStore.length > 0}
+				<p>{$byteStreamStore.length} bytes</p>
+			{/if}
+		</div>
 
 		<div class="panel__content format-options">
 			<select bind:value={selectedFormatIndex}>
@@ -78,6 +83,16 @@
 
 		display: grid;
 		gap: 2rem;
+	}
+
+	.info-header {
+		display: flex;
+		align-items: center;
+		gap: 1rem;
+
+		& > :first-child {
+			margin-right: auto;
+		}
 	}
 
 	.format-options {
