@@ -43,7 +43,8 @@ export default class BaseNFormat implements Format<BaseNFormatOptions> {
 		// prettier-ignore
 		return format
 			.split(/\s+/)
-			.map((word) => parseInt(word, this.base));
+			.filter((word) => word !== "")
+			.map((word) => parseInt(word, this.base) & 0xff);
 	}
 
 	encode(stream: Stream) {
