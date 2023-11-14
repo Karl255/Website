@@ -1,4 +1,5 @@
 import AsciiFormat from "./_AsciiFormat";
+import Base64Format from "./_Base64Format";
 import BaseNFormat from "./_BaseNFormat";
 import HtmlEntitiesFormat from "./_HtmlEntitiesFormat";
 import UrlFormat from "./_UrlFormat";
@@ -10,23 +11,21 @@ export * from "./_format";
 export const formatTypes: FormatType<any, any>[] = [
 	AsciiFormat,
 	BaseNFormat,
+	Base64Format,
 	HtmlEntitiesFormat,
 	UrlFormat,
 ];
 
 export const defaultFormats: Format<any>[] = [
 	new AsciiFormat(),
+	new Base64Format(),
 	new BaseNFormat({ base: 16 }),
 	new BaseNFormat({ base: 2 }),
-	new BaseNFormat({ base: 10 }),
-	new HtmlEntitiesFormat(),
 ];
 
 /*
 TODO formats:
-URL encoding
 ROT13 (variable)
-base64
 (new)
 unicode
 hashes?
