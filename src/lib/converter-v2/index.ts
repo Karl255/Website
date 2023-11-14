@@ -2,6 +2,7 @@ import AsciiFormat from "./_AsciiFormat";
 import Base64Format from "./_Base64Format";
 import BaseNFormat from "./_BaseNFormat";
 import HtmlEntitiesFormat from "./_HtmlEntitiesFormat";
+import Rot13Format from "./_Rot13Format";
 import UrlFormat from "./_UrlFormat";
 import type { Format, FormatType } from "./_format";
 
@@ -12,6 +13,7 @@ export const formatTypes: FormatType<any, any>[] = [
 	AsciiFormat,
 	BaseNFormat,
 	Base64Format,
+	Rot13Format,
 	HtmlEntitiesFormat,
 	UrlFormat,
 ];
